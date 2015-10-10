@@ -1,0 +1,547 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A22B4FC41BC906730062970C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22B4FC31BC906730062970C /* AppDelegate.swift */; };
+		A22B4FC61BC906730062970C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22B4FC51BC906730062970C /* ViewController.swift */; };
+		A22B4FC91BC906730062970C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A22B4FC71BC906730062970C /* Main.storyboard */; };
+		A22B4FCB1BC906730062970C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A22B4FCA1BC906730062970C /* Assets.xcassets */; };
+		A22B4FCE1BC906730062970C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A22B4FCC1BC906730062970C /* LaunchScreen.storyboard */; };
+		A22B4FD31BC906730062970C /* HomeControl WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A22B4FD21BC906730062970C /* HomeControl WatchKit App.app */; };
+		A22B4FD91BC906730062970C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A22B4FD71BC906730062970C /* Interface.storyboard */; };
+		A22B4FDB1BC906730062970C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A22B4FDA1BC906730062970C /* Assets.xcassets */; };
+		A22B4FE21BC906730062970C /* HomeControl WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A22B4FE11BC906730062970C /* HomeControl WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A22B4FE71BC906730062970C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22B4FE61BC906730062970C /* InterfaceController.swift */; };
+		A22B4FE91BC906730062970C /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22B4FE81BC906730062970C /* ExtensionDelegate.swift */; };
+		A22B4FEB1BC906730062970C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A22B4FEA1BC906730062970C /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A22B4FD41BC906730062970C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A22B4FB81BC906720062970C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A22B4FD11BC906730062970C;
+			remoteInfo = "HomeControl WatchKit App";
+		};
+		A22B4FE31BC906730062970C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A22B4FB81BC906720062970C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A22B4FE01BC906730062970C;
+			remoteInfo = "HomeControl WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A22B4FF21BC906730062970C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A22B4FE21BC906730062970C /* HomeControl WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A22B4FF61BC906730062970C /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				A22B4FD31BC906730062970C /* HomeControl WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A22B4FC01BC906730062970C /* HomeControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A22B4FC31BC906730062970C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A22B4FC51BC906730062970C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A22B4FC81BC906730062970C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A22B4FCA1BC906730062970C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A22B4FCD1BC906730062970C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A22B4FCF1BC906730062970C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A22B4FD21BC906730062970C /* HomeControl WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomeControl WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A22B4FD81BC906730062970C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		A22B4FDA1BC906730062970C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A22B4FDC1BC906730062970C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A22B4FE11BC906730062970C /* HomeControl WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HomeControl WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A22B4FE61BC906730062970C /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		A22B4FE81BC906730062970C /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		A22B4FEA1BC906730062970C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A22B4FEC1BC906730062970C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A22B4FBD1BC906720062970C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A22B4FDE1BC906730062970C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A22B4FB71BC906720062970C = {
+			isa = PBXGroup;
+			children = (
+				A22B4FC21BC906730062970C /* HomeControl */,
+				A22B4FD61BC906730062970C /* HomeControl WatchKit App */,
+				A22B4FE51BC906730062970C /* HomeControl WatchKit Extension */,
+				A22B4FC11BC906730062970C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A22B4FC11BC906730062970C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A22B4FC01BC906730062970C /* HomeControl.app */,
+				A22B4FD21BC906730062970C /* HomeControl WatchKit App.app */,
+				A22B4FE11BC906730062970C /* HomeControl WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A22B4FC21BC906730062970C /* HomeControl */ = {
+			isa = PBXGroup;
+			children = (
+				A22B4FC31BC906730062970C /* AppDelegate.swift */,
+				A22B4FC51BC906730062970C /* ViewController.swift */,
+				A22B4FC71BC906730062970C /* Main.storyboard */,
+				A22B4FCA1BC906730062970C /* Assets.xcassets */,
+				A22B4FCC1BC906730062970C /* LaunchScreen.storyboard */,
+				A22B4FCF1BC906730062970C /* Info.plist */,
+			);
+			path = HomeControl;
+			sourceTree = "<group>";
+		};
+		A22B4FD61BC906730062970C /* HomeControl WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				A22B4FD71BC906730062970C /* Interface.storyboard */,
+				A22B4FDA1BC906730062970C /* Assets.xcassets */,
+				A22B4FDC1BC906730062970C /* Info.plist */,
+			);
+			path = "HomeControl WatchKit App";
+			sourceTree = "<group>";
+		};
+		A22B4FE51BC906730062970C /* HomeControl WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A22B4FE61BC906730062970C /* InterfaceController.swift */,
+				A22B4FE81BC906730062970C /* ExtensionDelegate.swift */,
+				A22B4FEA1BC906730062970C /* Assets.xcassets */,
+				A22B4FEC1BC906730062970C /* Info.plist */,
+			);
+			path = "HomeControl WatchKit Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A22B4FBF1BC906720062970C /* HomeControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A22B4FF71BC906730062970C /* Build configuration list for PBXNativeTarget "HomeControl" */;
+			buildPhases = (
+				A22B4FBC1BC906720062970C /* Sources */,
+				A22B4FBD1BC906720062970C /* Frameworks */,
+				A22B4FBE1BC906720062970C /* Resources */,
+				A22B4FF61BC906730062970C /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A22B4FD51BC906730062970C /* PBXTargetDependency */,
+			);
+			name = HomeControl;
+			productName = HomeControl;
+			productReference = A22B4FC01BC906730062970C /* HomeControl.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A22B4FD11BC906730062970C /* HomeControl WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A22B4FF31BC906730062970C /* Build configuration list for PBXNativeTarget "HomeControl WatchKit App" */;
+			buildPhases = (
+				A22B4FD01BC906730062970C /* Resources */,
+				A22B4FF21BC906730062970C /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A22B4FE41BC906730062970C /* PBXTargetDependency */,
+			);
+			name = "HomeControl WatchKit App";
+			productName = "HomeControl WatchKit App";
+			productReference = A22B4FD21BC906730062970C /* HomeControl WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		A22B4FE01BC906730062970C /* HomeControl WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A22B4FEF1BC906730062970C /* Build configuration list for PBXNativeTarget "HomeControl WatchKit Extension" */;
+			buildPhases = (
+				A22B4FDD1BC906730062970C /* Sources */,
+				A22B4FDE1BC906730062970C /* Frameworks */,
+				A22B4FDF1BC906730062970C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HomeControl WatchKit Extension";
+			productName = "HomeControl WatchKit Extension";
+			productReference = A22B4FE11BC906730062970C /* HomeControl WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A22B4FB81BC906720062970C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Christoph Eicke";
+				TargetAttributes = {
+					A22B4FBF1BC906720062970C = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					A22B4FD11BC906730062970C = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					A22B4FE01BC906730062970C = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
+			};
+			buildConfigurationList = A22B4FBB1BC906720062970C /* Build configuration list for PBXProject "HomeControl" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A22B4FB71BC906720062970C;
+			productRefGroup = A22B4FC11BC906730062970C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A22B4FBF1BC906720062970C /* HomeControl */,
+				A22B4FD11BC906730062970C /* HomeControl WatchKit App */,
+				A22B4FE01BC906730062970C /* HomeControl WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A22B4FBE1BC906720062970C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A22B4FCE1BC906730062970C /* LaunchScreen.storyboard in Resources */,
+				A22B4FCB1BC906730062970C /* Assets.xcassets in Resources */,
+				A22B4FC91BC906730062970C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A22B4FD01BC906730062970C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A22B4FDB1BC906730062970C /* Assets.xcassets in Resources */,
+				A22B4FD91BC906730062970C /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A22B4FDF1BC906730062970C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A22B4FEB1BC906730062970C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A22B4FBC1BC906720062970C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A22B4FC61BC906730062970C /* ViewController.swift in Sources */,
+				A22B4FC41BC906730062970C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A22B4FDD1BC906730062970C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A22B4FE91BC906730062970C /* ExtensionDelegate.swift in Sources */,
+				A22B4FE71BC906730062970C /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A22B4FD51BC906730062970C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A22B4FD11BC906730062970C /* HomeControl WatchKit App */;
+			targetProxy = A22B4FD41BC906730062970C /* PBXContainerItemProxy */;
+		};
+		A22B4FE41BC906730062970C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A22B4FE01BC906730062970C /* HomeControl WatchKit Extension */;
+			targetProxy = A22B4FE31BC906730062970C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A22B4FC71BC906730062970C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A22B4FC81BC906730062970C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A22B4FCC1BC906730062970C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A22B4FCD1BC906730062970C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A22B4FD71BC906730062970C /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A22B4FD81BC906730062970C /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A22B4FED1BC906730062970C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A22B4FEE1BC906730062970C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A22B4FF01BC906730062970C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "HomeControl WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.geisterstunde.HomeControl.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		A22B4FF11BC906730062970C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "HomeControl WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.geisterstunde.HomeControl.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		A22B4FF41BC906730062970C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = HomeControl_WatchKit_Extension;
+				INFOPLIST_FILE = "HomeControl WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = org.geisterstunde.HomeControl.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		A22B4FF51BC906730062970C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = HomeControl_WatchKit_Extension;
+				INFOPLIST_FILE = "HomeControl WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = org.geisterstunde.HomeControl.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		A22B4FF81BC906730062970C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HomeControl/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.geisterstunde.HomeControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A22B4FF91BC906730062970C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HomeControl/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.geisterstunde.HomeControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A22B4FBB1BC906720062970C /* Build configuration list for PBXProject "HomeControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A22B4FED1BC906730062970C /* Debug */,
+				A22B4FEE1BC906730062970C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A22B4FEF1BC906730062970C /* Build configuration list for PBXNativeTarget "HomeControl WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A22B4FF01BC906730062970C /* Debug */,
+				A22B4FF11BC906730062970C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A22B4FF31BC906730062970C /* Build configuration list for PBXNativeTarget "HomeControl WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A22B4FF41BC906730062970C /* Debug */,
+				A22B4FF51BC906730062970C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A22B4FF71BC906730062970C /* Build configuration list for PBXNativeTarget "HomeControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A22B4FF81BC906730062970C /* Debug */,
+				A22B4FF91BC906730062970C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A22B4FB81BC906720062970C /* Project object */;
+}
