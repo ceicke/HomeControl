@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class SettingController: UIViewController, UITableViewDataSource {
     
-    var settings = [String]()
+    var settings = [NSManagedObject]()
     
     @IBOutlet var tableView: UITableView!
     
@@ -20,13 +21,12 @@ class SettingController: UIViewController, UITableViewDataSource {
             message: "Neuen Aktor hinzufügen",
             preferredStyle: .Alert)
         
-        let saveAction = UIAlertAction(title: "Speichern",
+        let saveAction = UIAlertAction(title: "Save",
             style: .Default,
             handler: { (action:UIAlertAction) -> Void in
                 
                 let textField = alert.textFields!.first
-                self.settings.append(textField!.text!)
-                print(self.settings)
+                self.saveSetting(textField!.text!)
                 self.tableView.reloadData()
         })
         
@@ -53,7 +53,29 @@ class SettingController: UIViewController, UITableViewDataSource {
         
     }
     
-    // MARK: UITableViewDataSource
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //1
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let fetchRequest = NSFetchRequest(entityName: "Actor")
+        
+        //3
+        do {
+            let results =
+            try managedContext!.executeFetchRequest(fetchRequest)
+            settings = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+    }
+    
+    //Replace both UITableViewDataSource methods
     func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
             return settings.count
@@ -65,8 +87,34 @@ class SettingController: UIViewController, UITableViewDataSource {
             
             let cell = tableView.dequeueReusableCellWithIdentifier("Cell")
             
-            cell!.textLabel!.text = settings[indexPath.row]
+            let setting = settings[indexPath.row]
+            
+            cell!.textLabel!.text = setting.valueForKey("name") as? String
             
             return cell!
+    }
+    
+    func saveSetting(name: String) {
+        //1
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let entity =  NSEntityDescription.entityForName("Actor", inManagedObjectContext:managedContext!)
+        
+        let setting = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+        //3
+        setting.setValue(name, forKey: "name")
+        
+        //4
+        do {
+            try managedContext!.save()
+            //5
+            settings.append(setting)
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
     }
 }
