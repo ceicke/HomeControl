@@ -21,7 +21,7 @@ class SettingController: UIViewController, UITableViewDataSource {
             message: "Neuen Aktor hinzufügen",
             preferredStyle: .Alert)
         
-        let saveAction = UIAlertAction(title: "Save",
+        let saveAction = UIAlertAction(title: "Speichern",
             style: .Default,
             handler: { (action:UIAlertAction) -> Void in
                 
@@ -38,8 +38,8 @@ class SettingController: UIViewController, UITableViewDataSource {
             (textField: UITextField) -> Void in
         }
         
-        alert.addAction(saveAction)
         alert.addAction(cancelAction)
+        alert.addAction(saveAction)
         
         presentViewController(alert,
             animated: true,
@@ -56,16 +56,13 @@ class SettingController: UIViewController, UITableViewDataSource {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        //1
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext
         
-        //2
         let fetchRequest = NSFetchRequest(entityName: "Actor")
         
-        //3
         do {
             let results =
             try managedContext!.executeFetchRequest(fetchRequest)
@@ -75,7 +72,6 @@ class SettingController: UIViewController, UITableViewDataSource {
         }
     }
     
-    //Replace both UITableViewDataSource methods
     func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
             return settings.count
@@ -95,23 +91,18 @@ class SettingController: UIViewController, UITableViewDataSource {
     }
     
     func saveSetting(name: String) {
-        //1
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext
         
-        //2
         let entity =  NSEntityDescription.entityForName("Actor", inManagedObjectContext:managedContext!)
         
         let setting = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
         
-        //3
         setting.setValue(name, forKey: "name")
         
-        //4
         do {
             try managedContext!.save()
-            //5
             settings.append(setting)
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
