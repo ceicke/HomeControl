@@ -25,6 +25,8 @@
 		A22B4FE71BC906730062970C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22B4FE61BC906730062970C /* InterfaceController.swift */; };
 		A22B4FE91BC906730062970C /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22B4FE81BC906730062970C /* ExtensionDelegate.swift */; };
 		A22B4FEB1BC906730062970C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A22B4FEA1BC906730062970C /* Assets.xcassets */; };
+		A26A36121BD13E1A00DA7622 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A36111BD13E1A00DA7622 /* SettingController.swift */; settings = {ASSET_TAGS = (); }; };
+		A26A36151BD1401400DA7622 /* LoxoneConfiguration.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A26A36131BD1401400DA7622 /* LoxoneConfiguration.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		A22B4FE81BC906730062970C /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		A22B4FEA1BC906730062970C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A22B4FEC1BC906730062970C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A26A36111BD13E1A00DA7622 /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
+		A26A36141BD1401400DA7622 /* LoxoneConfiguration.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoxoneConfiguration.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 		A22B4FB71BC906720062970C = {
 			isa = PBXGroup;
 			children = (
+				A26A36131BD1401400DA7622 /* LoxoneConfiguration.xcdatamodeld */,
 				A22B4FC21BC906730062970C /* HomeControl */,
 				A22B4FD61BC906730062970C /* HomeControl WatchKit App */,
 				A22B4FE51BC906730062970C /* HomeControl WatchKit Extension */,
@@ -141,6 +146,7 @@
 				A22B4FCA1BC906730062970C /* Assets.xcassets */,
 				A22B4FCC1BC906730062970C /* LaunchScreen.storyboard */,
 				A22B4FCF1BC906730062970C /* Info.plist */,
+				A26A36111BD13E1A00DA7622 /* SettingController.swift */,
 			);
 			path = HomeControl;
 			sourceTree = "<group>";
@@ -327,7 +333,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A26A36121BD13E1A00DA7622 /* SettingController.swift in Sources */,
 				A22B4FC61BC906730062970C /* ViewController.swift in Sources */,
+				A26A36151BD1401400DA7622 /* LoxoneConfiguration.xcdatamodeld in Sources */,
 				A22B4FC41BC906730062970C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -611,6 +619,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A26A36131BD1401400DA7622 /* LoxoneConfiguration.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A26A36141BD1401400DA7622 /* LoxoneConfiguration.xcdatamodel */,
+			);
+			currentVersion = A26A36141BD1401400DA7622 /* LoxoneConfiguration.xcdatamodel */;
+			path = LoxoneConfiguration.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A22B4FB81BC906720062970C /* Project object */;
 }

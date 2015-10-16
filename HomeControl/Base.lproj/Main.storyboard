@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="RpJ-t5-yM4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -17,36 +17,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Loxone Server Konfiguration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAF-1t-iVl">
-                                <rect key="frame" x="52" y="50" width="216" height="21"/>
+                                <rect key="frame" x="52" y="72" width="216" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Miniserver IP" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9oD-fc-Kw0">
-                                <rect key="frame" x="20" y="91" width="280" height="30"/>
+                                <rect key="frame" x="20" y="113" width="280" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Benutzername" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6I2-Cz-lhj">
-                                <rect key="frame" x="20" y="129" width="280" height="30"/>
+                                <rect key="frame" x="20" y="151" width="280" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cLR-6w-cai">
-                                <rect key="frame" x="20" y="167" width="280" height="30"/>
+                                <rect key="frame" x="20" y="189" width="280" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRB-e8-SV7">
-                                <rect key="frame" x="143" y="205" width="34" height="30"/>
+                                <rect key="frame" x="143" y="227" width="34" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveValues:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qEC-G9-o0z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncL-M2-Nx6">
+                                <rect key="frame" x="86" y="274" width="148" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Aktoren konfigurieren"/>
+                                <connections>
+                                    <segue destination="q49-Nb-HyH" kind="push" id="taZ-kt-tAe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -59,6 +67,7 @@
                             <constraint firstItem="lAF-1t-iVl" firstAttribute="height" secondItem="9oD-fc-Kw0" secondAttribute="height" id="Xrx-Rw-uJp"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="nGe-pT-Lwg"/>
                     <connections>
                         <outlet property="loxonePassword" destination="cLR-6w-cai" id="cUQ-5b-GZn"/>
                         <outlet property="loxoneServerUrl" destination="9oD-fc-Kw0" id="YLf-SM-fyT"/>
@@ -66,6 +75,53 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="708" y="395"/>
+        </scene>
+        <!--Setting Controller-->
+        <scene sceneID="upK-HW-65C">
+            <objects>
+                <tableViewController id="q49-Nb-HyH" customClass="SettingController" customModule="HomeControl" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vn7-ph-Tn9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="q49-Nb-HyH" id="dsm-oV-wGe"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="OV2-de-5w6">
+                        <barButtonItem key="rightBarButtonItem" title="Neu" id="4Nm-Br-naC">
+                            <connections>
+                                <action selector="addSetting:" destination="q49-Nb-HyH" id="WEl-0F-tTO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="vn7-ph-Tn9" id="Jka-rw-uxb"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rgd-aF-cVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1205" y="395"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cRQ-e9-NVY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RpJ-t5-yM4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gIa-n5-gf2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vsr-nn-AGe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jic-rc-206" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="176" y="395"/>
         </scene>
