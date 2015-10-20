@@ -54,7 +54,7 @@
                                 <animations/>
                                 <state key="normal" title="Aktoren konfigurieren"/>
                                 <connections>
-                                    <segue destination="q49-Nb-HyH" kind="push" id="taZ-kt-tAe"/>
+                                    <segue destination="q49-Nb-HyH" kind="push" id="vfd-3e-ZIS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -87,6 +87,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="c0Z-DC-Ln1" style="IBUITableViewCellStyleDefault" id="U31-9b-aiE">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U31-9b-aiE" id="ODO-a3-cDC">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c0Z-DC-Ln1">
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <segue destination="fj9-H6-aTo" kind="push" identifier="showActorDetail" id="aJ1-HD-gXC"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="q49-Nb-HyH" id="dsm-oV-wGe"/>
                         </connections>
@@ -98,13 +124,63 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="tableView" destination="vn7-ph-Tn9" id="Jka-rw-uxb"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgd-aF-cVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1205" y="395"/>
+            <point key="canvasLocation" x="1182" y="395"/>
+        </scene>
+        <!--Actor Detail Controller-->
+        <scene sceneID="a2f-e6-Ymw">
+            <objects>
+                <viewController id="fj9-H6-aTo" customClass="ActorDetailController" customModule="HomeControl" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4pW-hc-FTF"/>
+                        <viewControllerLayoutGuide type="bottom" id="rea-Ty-8zK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jex-dF-d2Y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Aktor Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uoP-qS-b15">
+                                <rect key="frame" x="20" y="72" width="280" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UUID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Wh-gh-UiX">
+                                <rect key="frame" x="20" y="110" width="280" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Szene" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4m5-0q-0md">
+                                <rect key="frame" x="20" y="148" width="280" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krA-15-FF1">
+                                <rect key="frame" x="230" y="186" width="70" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Speichern"/>
+                                <connections>
+                                    <action selector="saveActor:" destination="fj9-H6-aTo" eventType="touchUpInside" id="fBg-9r-nN5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EA4-0N-xWJ"/>
+                    <connections>
+                        <outlet property="actorName" destination="uoP-qS-b15" id="QpP-Jd-R9h"/>
+                        <outlet property="actorScene" destination="4m5-0q-0md" id="AAJ-b9-Syi"/>
+                        <outlet property="actorUUID" destination="2Wh-gh-UiX" id="Zd0-3H-iEn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bj8-cK-hlq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1628" y="395"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cRQ-e9-NVY">

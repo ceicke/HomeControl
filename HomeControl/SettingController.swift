@@ -9,12 +9,9 @@
 import UIKit
 import CoreData
 
-class SettingController: UIViewController, UITableViewDataSource {
+class SettingController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     var settings = [NSManagedObject]()
-    
-    @IBOutlet var tableView: UITableView!
-    
     
     @IBAction func addSetting(sender: AnyObject) {
         let alert = UIAlertController(title: "Neuer Aktor",
@@ -49,8 +46,20 @@ class SettingController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Aktoren"
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        
+//        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showActorDetail" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+
+                print(settings[indexPath.row])
+                
+               (segue.destinationViewController as! ActorDetailController).selectedActor =
+                    settings[indexPath.row]
+                
+            }
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -72,22 +81,30 @@ class SettingController: UIViewController, UITableViewDataSource {
         }
     }
     
-    func tableView(tableView: UITableView,
+    override func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
             return settings.count
     }
     
-    func tableView(tableView: UITableView,
+    override func tableView(tableView: UITableView,
         cellForRowAtIndexPath
         indexPath: NSIndexPath) -> UITableViewCell {
             
-            let cell = tableView.dequeueReusableCellWithIdentifier("Cell")
+            let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
             
-            let setting = settings[indexPath.row]
+            self.configureCell(cell, atIndexPath: indexPath)
             
-            cell!.textLabel!.text = setting.valueForKey("name") as? String
-            
-            return cell!
+            return cell
+    }
+    
+    func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
+        let setting = settings[indexPath.row]
+        cell.textLabel!.text = setting.valueForKey("name")!.description
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
     }
     
     func saveSetting(name: String) {
