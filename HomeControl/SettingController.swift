@@ -99,7 +99,6 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
         let setting = settings[indexPath.row]
         cell.textLabel!.text = setting.valueForKey("name")!.description
-        cell.UUIDLabel!.text = setting.valueForKey("uuid")!.description
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
