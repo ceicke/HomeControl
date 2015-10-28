@@ -28,6 +28,8 @@
 		A22B4FEB1BC906730062970C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A22B4FEA1BC906730062970C /* Assets.xcassets */; };
 		A26A36121BD13E1A00DA7622 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A36111BD13E1A00DA7622 /* SettingController.swift */; settings = {ASSET_TAGS = (); }; };
 		A26A36151BD1401400DA7622 /* LoxoneConfiguration.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A26A36131BD1401400DA7622 /* LoxoneConfiguration.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
+		A2954D821BE1174200903087 /* Actor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2954D801BE1174200903087 /* Actor+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		A2954D831BE1174200903087 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2954D811BE1174200903087 /* Actor.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		A22B4FEC1BC906730062970C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A26A36111BD13E1A00DA7622 /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		A26A36141BD1401400DA7622 /* LoxoneConfiguration.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoxoneConfiguration.xcdatamodel; sourceTree = "<group>"; };
+		A2954D801BE1174200903087 /* Actor+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Actor+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A2954D811BE1174200903087 /* Actor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,8 @@
 		A22B4FC21BC906730062970C /* HomeControl */ = {
 			isa = PBXGroup;
 			children = (
+				A2954D801BE1174200903087 /* Actor+CoreDataProperties.swift */,
+				A2954D811BE1174200903087 /* Actor.swift */,
 				A21A2C101BD6C3EA0097F24D /* Main.storyboard */,
 				A22B4FC31BC906730062970C /* AppDelegate.swift */,
 				A22B4FC51BC906730062970C /* ViewController.swift */,
@@ -337,7 +343,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A26A36121BD13E1A00DA7622 /* SettingController.swift in Sources */,
+				A2954D821BE1174200903087 /* Actor+CoreDataProperties.swift in Sources */,
 				A21A2C0F1BD6BE350097F24D /* ActorDetailController.swift in Sources */,
+				A2954D831BE1174200903087 /* Actor.swift in Sources */,
 				A22B4FC61BC906730062970C /* ViewController.swift in Sources */,
 				A26A36151BD1401400DA7622 /* LoxoneConfiguration.xcdatamodeld in Sources */,
 				A22B4FC41BC906730062970C /* AppDelegate.swift in Sources */,

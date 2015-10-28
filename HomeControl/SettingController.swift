@@ -46,17 +46,16 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Aktoren"
-//        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showActorDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-
                 print(settings[indexPath.row])
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                 
-               (segue.destinationViewController as! ActorDetailController).selectedActor =
-                    settings[indexPath.row]
+                (segue.destinationViewController as! ActorDetailController).actor = settings[indexPath.row] as? Actor
+                (segue.destinationViewController as! ActorDetailController).managedObjectContext = appDelegate.managedObjectContext
                 
             }
         }
@@ -100,6 +99,7 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
         let setting = settings[indexPath.row]
         cell.textLabel!.text = setting.valueForKey("name")!.description
+        cell.UUIDLabel!.text = setting.valueForKey("uuid")!.description
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

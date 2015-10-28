@@ -88,14 +88,14 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="c0Z-DC-Ln1" style="IBUITableViewCellStyleDefault" id="U31-9b-aiE">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="Ixi-HJ-hZH" rowHeight="44" style="IBUITableViewCellStyleDefault" id="U31-9b-aiE">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U31-9b-aiE" id="ODO-a3-cDC">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c0Z-DC-Ln1">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ixi-HJ-hZH">
                                             <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
@@ -151,20 +151,32 @@
                                 <rect key="frame" x="20" y="110" width="280" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Szene" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4m5-0q-0md">
-                                <rect key="frame" x="20" y="148" width="280" height="30"/>
+                                <rect key="frame" x="20" y="148" width="145" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qhP-y4-MKg">
+                                <rect key="frame" x="251" y="148" width="51" height="31"/>
+                                <animations/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dimmbar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcC-R4-KAN">
+                                <rect key="frame" x="173" y="153" width="70" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krA-15-FF1">
-                                <rect key="frame" x="230" y="186" width="70" height="30"/>
+                                <rect key="frame" x="125" y="207" width="70" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Speichern"/>
                                 <connections>
                                     <action selector="saveActor:" destination="fj9-H6-aTo" eventType="touchUpInside" id="fBg-9r-nN5"/>
+                                    <segue destination="q49-Nb-HyH" kind="push" identifier="actorSaved" id="keu-nh-uBr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -173,6 +185,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="EA4-0N-xWJ"/>
                     <connections>
+                        <outlet property="actorDimmable" destination="qhP-y4-MKg" id="e8D-K0-HJF"/>
                         <outlet property="actorName" destination="uoP-qS-b15" id="QpP-Jd-R9h"/>
                         <outlet property="actorScene" destination="4m5-0q-0md" id="AAJ-b9-Syi"/>
                         <outlet property="actorUUID" destination="2Wh-gh-UiX" id="Zd0-3H-iEn"/>
@@ -180,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bj8-cK-hlq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1628" y="395"/>
+            <point key="canvasLocation" x="1639" y="395"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cRQ-e9-NVY">
@@ -202,4 +215,7 @@
             <point key="canvasLocation" x="176" y="395"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="keu-nh-uBr"/>
+    </inferredMetricsTieBreakers>
 </document>
