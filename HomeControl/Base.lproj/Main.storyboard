@@ -42,9 +42,9 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRB-e8-SV7">
-                                <rect key="frame" x="143" y="227" width="34" height="30"/>
+                                <rect key="frame" x="20" y="227" width="280" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="Konfiguration an AppleWatch senden"/>
                                 <connections>
                                     <action selector="saveValues:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qEC-G9-o0z"/>
                                 </connections>
@@ -89,7 +89,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="Ixi-HJ-hZH" rowHeight="44" style="IBUITableViewCellStyleDefault" id="U31-9b-aiE">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U31-9b-aiE" id="ODO-a3-cDC">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
@@ -118,7 +118,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="OV2-de-5w6">
-                        <barButtonItem key="rightBarButtonItem" title="Neu" id="4Nm-Br-naC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4Nm-Br-naC">
                             <connections>
                                 <action selector="addSetting:" destination="q49-Nb-HyH" id="WEl-0F-tTO"/>
                             </connections>
@@ -216,6 +216,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="keu-nh-uBr"/>
+        <segue reference="vfd-3e-ZIS"/>
     </inferredMetricsTieBreakers>
 </document>

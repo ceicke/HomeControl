@@ -51,5 +51,20 @@ class ActorDetailController: UIViewController {
         super.viewDidLoad()
         self.configureView()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SaveActor" {
+            actor?.setValue(actorName.text, forKey: "name")
+            actor?.setValue(actorUUID.text, forKey: "uuid")
+            actor?.setValue(Int(actorScene.text!), forKey: "scene")
+            actor?.setValue(actorDimmable.on, forKey: "dimmable")
+            
+            do {
+                try managedObjectContext!.save()
+            } catch let error as NSError {
+                print("Could not save the actor. Error: \(error)")
+            }
+        }
+    }
 
 }

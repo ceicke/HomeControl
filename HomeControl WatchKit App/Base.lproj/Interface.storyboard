@@ -5,66 +5,54 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
     </dependencies>
     <scenes>
-        <!--Wohnen-->
+        <!--Hauptmenü-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller title="Wohnen" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HomeControl_WatchKit_App" customModuleProvider="target">
+                <controller title="Hauptmenü" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HomeControl_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <button width="1" alignment="left" title="Kochen" id="Gdy-zs-FgO">
+                        <picker width="1" height="114" alignment="left" id="X0v-8W-FvS">
+                            <accessibilityTraits key="accessibilityTraits" button="YES" updatesFrequently="YES" adjustable="YES"/>
                             <connections>
-                                <action selector="kochenPressed" destination="AgC-eL-Hgc" id="sBJ-Nu-0Ji"/>
+                                <action selector="pickerChanged:" destination="AgC-eL-Hgc" id="Ddd-fP-Oxa"/>
                             </connections>
-                        </button>
-                        <button width="1" alignment="left" title="Essen" id="0Fz-8y-xue">
+                        </picker>
+                        <button width="1" alignment="left" title="Button" id="yZM-hr-0gG">
                             <connections>
-                                <action selector="essenPressed" destination="AgC-eL-Hgc" id="8Vu-zO-T0r"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" title="Film" id="rQs-Wo-LAb">
-                            <connections>
-                                <action selector="filmPressed" destination="AgC-eL-Hgc" id="pUn-zf-2Pa"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" title="Chill" id="P3o-2t-bu8">
-                            <connections>
-                                <action selector="chillPressed" destination="AgC-eL-Hgc" id="lJk-rk-AbX"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" title="Aus" id="b15-Sy-BVK">
-                            <connections>
-                                <action selector="wohnzimmerAus" destination="AgC-eL-Hgc" id="7LE-mX-lSu"/>
-                            </connections>
-                        </button>
-                        <separator alignment="left" id="6Bo-Q4-FwP"/>
-                        <button width="1" alignment="left" title="Flur" id="Rtw-4Y-Hk5">
-                            <connections>
-                                <segue destination="3qv-Mp-I3H" kind="push" identifier="Flur" id="Wnr-Ai-N6z"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" title="Schlafzimmer" id="yJt-eH-VaE">
-                            <connections>
-                                <segue destination="Ixy-pJ-hUz" kind="push" identifier="Schlafzimmer" id="mv5-RU-4P5"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" title="Badezimmer" id="F06-zt-kkd">
-                            <connections>
-                                <segue destination="Knq-YL-6IT" kind="push" identifier="Badezimmer" id="6aL-Ay-bg4"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" title="Nora" id="c2V-TP-dly">
-                            <connections>
-                                <segue destination="3gV-N0-2Cb" kind="push" identifier="Nora" id="4vd-ck-OeO"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" title="Balkon" id="elM-yD-u4C">
-                            <connections>
-                                <segue destination="nxY-2r-9gl" kind="push" id="Qtz-C3-pmn"/>
+                                <segue destination="jdN-kr-U62" kind="push" identifier="ShowActor" id="ckZ-g8-XTq"/>
                             </connections>
                         </button>
                     </items>
+                    <connections>
+                        <outlet property="nextButton" destination="yZM-hr-0gG" id="Qul-hg-IiX"/>
+                        <outlet property="roomPicker" destination="X0v-8W-FvS" id="AM0-Cb-IV4"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="124" y="220"/>
+            <point key="canvasLocation" x="148" y="71.5"/>
+        </scene>
+        <!--Actor-->
+        <scene sceneID="iG6-hJ-g0V">
+            <objects>
+                <controller identifier="Actor" id="jdN-kr-U62" customClass="ActorController" customModule="HomeControl_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="An" id="uaj-Jp-ktK">
+                            <connections>
+                                <action selector="actorOn" destination="jdN-kr-U62" id="1Bs-34-kz1"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Aus" id="hgi-nX-kwR">
+                            <connections>
+                                <action selector="actorOff" destination="jdN-kr-U62" id="4hh-fP-kNx"/>
+                            </connections>
+                        </button>
+                        <slider width="1" alignment="left" maximum="100" steps="10" id="qB9-4V-PB7"/>
+                    </items>
+                    <connections>
+                        <outlet property="dimmer" destination="qB9-4V-PB7" id="kzD-sg-3Ds"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="375" y="69"/>
         </scene>
         <!--OK-->
         <scene sceneID="ffN-ie-sQ1">
@@ -81,114 +69,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="375" y="-231"/>
-        </scene>
-        <!--Bad-->
-        <scene sceneID="me4-ou-rXd">
-            <objects>
-                <controller identifier="Badezimmer" title="Bad" hidesWhenLoading="NO" id="Knq-YL-6IT" customClass="BadController" customModule="HomeControl_WatchKit_Extension">
-                    <items>
-                        <button width="1" alignment="left" title="Spiegel" id="bfh-L8-2GA">
-                            <connections>
-                                <action selector="badSpiegelToggle" destination="Knq-YL-6IT" id="bvO-uk-Ku7"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" title="Decke" id="jbu-sd-fKZ">
-                            <connections>
-                                <action selector="badDeckeToggle" destination="Knq-YL-6IT" id="PNr-qG-P2x"/>
-                            </connections>
-                        </button>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="554" y="3"/>
-        </scene>
-        <!--Flur-->
-        <scene sceneID="RI3-8e-afC">
-            <objects>
-                <controller identifier="Flur" title="Flur" hidesWhenLoading="NO" id="3qv-Mp-I3H" customClass="FlurController" customModule="HomeControl_WatchKit_Extension">
-                    <items>
-                        <button width="1" alignment="left" title="An" id="NHJ-G1-9D3">
-                            <connections>
-                                <action selector="flurAn" destination="3qv-Mp-I3H" id="ONL-Xf-YdO"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" title="Aus" id="4sP-4D-uNC">
-                            <connections>
-                                <action selector="flurAus" destination="3qv-Mp-I3H" id="mCU-I0-H2W"/>
-                            </connections>
-                        </button>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="554" y="220"/>
-        </scene>
-        <!--Nora-->
-        <scene sceneID="Aow-Z2-ExM">
-            <objects>
-                <controller identifier="Nora" title="Nora" hidesWhenLoading="NO" id="3gV-N0-2Cb" customClass="NoraController" customModule="HomeControl_WatchKit_Extension">
-                    <items>
-                        <button width="1" alignment="left" title="Banane" id="llt-ae-l4q">
-                            <connections>
-                                <action selector="bananeToggle" destination="3gV-N0-2Cb" id="3kv-eW-FD1"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" title="Nachtlicht" id="Q6i-07-1LQ">
-                            <connections>
-                                <action selector="nachtlichtToggle" destination="3gV-N0-2Cb" id="XUu-OX-2kc"/>
-                            </connections>
-                        </button>
-                        <label alignment="left" text="Deckenleuchte" id="G0j-5Y-Hz2"/>
-                        <slider width="1" alignment="left" value="1" maximum="10" steps="1" id="0zz-gL-fIk">
-                            <connections>
-                                <action selector="deckenleuchte:" destination="3gV-N0-2Cb" id="pRr-yL-0PR"/>
-                            </connections>
-                        </slider>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="375" y="730"/>
-        </scene>
-        <!--Balkon-->
-        <scene sceneID="ov7-c3-3dM">
-            <objects>
-                <controller identifier="BalkonController" title="Balkon" hidesWhenLoading="NO" id="nxY-2r-9gl" customClass="BalkonController" customModule="HomeControl_WatchKit_Extension">
-                    <items>
-                        <button width="1" alignment="left" title="Leuchte" id="PQl-A7-gP4">
-                            <connections>
-                                <action selector="leuchteToggle" destination="nxY-2r-9gl" id="SPo-0R-cM7"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" title="Qube" id="gix-Zr-BMA">
-                            <connections>
-                                <action selector="qubeToggle" destination="nxY-2r-9gl" id="dRg-6z-HKO"/>
-                            </connections>
-                        </button>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="554" y="730"/>
-        </scene>
-        <!--Schlafzimmer-->
-        <scene sceneID="qrf-eD-oHG">
-            <objects>
-                <controller identifier="Schlafzimmer" title="Schlafzimmer" hidesWhenLoading="NO" id="Ixy-pJ-hUz" customClass="SchlafzimmerController" customModule="HomeControl_WatchKit_Extension">
-                    <items>
-                        <button width="1" alignment="left" title="Stehleuchte" id="Xmv-hh-bdv">
-                            <connections>
-                                <action selector="schlafzimmerStehleuchteToggle" destination="Ixy-pJ-hUz" id="cFc-53-umR"/>
-                            </connections>
-                        </button>
-                        <label alignment="left" text="Deckenleuchte" id="wfS-qC-QlC"/>
-                        <slider width="1" alignment="left" value="1" maximum="10" steps="10" id="IvT-q3-0zH">
-                            <connections>
-                                <action selector="schlafzimmerValueChanged:" destination="Ixy-pJ-hUz" id="MLb-w2-aSI"/>
-                            </connections>
-                        </slider>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="554" y="435"/>
+            <point key="canvasLocation" x="375" y="-196"/>
         </scene>
     </scenes>
 </document>

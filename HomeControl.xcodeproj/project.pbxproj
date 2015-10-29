@@ -8,11 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A20735041BC97E1200CEF141 /* Loxone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20735031BC97E1200CEF141 /* Loxone.swift */; settings = {ASSET_TAGS = (); }; };
-		A20735061BC97EF900CEF141 /* BadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20735051BC97EF900CEF141 /* BadController.swift */; settings = {ASSET_TAGS = (); }; };
-		A20735081BC9802700CEF141 /* FlurController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20735071BC9802700CEF141 /* FlurController.swift */; settings = {ASSET_TAGS = (); }; };
-		A207350A1BC9808300CEF141 /* SchlafzimmerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20735091BC9808300CEF141 /* SchlafzimmerController.swift */; settings = {ASSET_TAGS = (); }; };
-		A207350C1BC981F500CEF141 /* BalkonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207350B1BC981F500CEF141 /* BalkonController.swift */; settings = {ASSET_TAGS = (); }; };
-		A207350E1BC985D100CEF141 /* NoraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207350D1BC985D100CEF141 /* NoraController.swift */; settings = {ASSET_TAGS = (); }; };
 		A21A2C0F1BD6BE350097F24D /* ActorDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A2C0E1BD6BE350097F24D /* ActorDetailController.swift */; settings = {ASSET_TAGS = (); }; };
 		A21A2C121BD6C3EA0097F24D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21A2C101BD6C3EA0097F24D /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		A22B4FC41BC906730062970C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22B4FC31BC906730062970C /* AppDelegate.swift */; };
@@ -30,6 +25,7 @@
 		A26A36151BD1401400DA7622 /* LoxoneConfiguration.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A26A36131BD1401400DA7622 /* LoxoneConfiguration.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		A2954D821BE1174200903087 /* Actor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2954D801BE1174200903087 /* Actor+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		A2954D831BE1174200903087 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2954D811BE1174200903087 /* Actor.swift */; settings = {ASSET_TAGS = (); }; };
+		A2DFD8291BE271B800D1DF88 /* ActorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DFD8281BE271B800D1DF88 /* ActorController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,11 +72,6 @@
 
 /* Begin PBXFileReference section */
 		A20735031BC97E1200CEF141 /* Loxone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loxone.swift; sourceTree = "<group>"; };
-		A20735051BC97EF900CEF141 /* BadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadController.swift; sourceTree = "<group>"; };
-		A20735071BC9802700CEF141 /* FlurController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlurController.swift; sourceTree = "<group>"; };
-		A20735091BC9808300CEF141 /* SchlafzimmerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchlafzimmerController.swift; sourceTree = "<group>"; };
-		A207350B1BC981F500CEF141 /* BalkonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalkonController.swift; sourceTree = "<group>"; };
-		A207350D1BC985D100CEF141 /* NoraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoraController.swift; sourceTree = "<group>"; };
 		A21A2C0E1BD6BE350097F24D /* ActorDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorDetailController.swift; sourceTree = "<group>"; };
 		A21A2C111BD6C3EA0097F24D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A22B4FC01BC906730062970C /* HomeControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +93,7 @@
 		A26A36141BD1401400DA7622 /* LoxoneConfiguration.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoxoneConfiguration.xcdatamodel; sourceTree = "<group>"; };
 		A2954D801BE1174200903087 /* Actor+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Actor+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A2954D811BE1174200903087 /* Actor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
+		A2DFD8281BE271B800D1DF88 /* ActorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,11 +170,7 @@
 				A22B4FEA1BC906730062970C /* Assets.xcassets */,
 				A22B4FEC1BC906730062970C /* Info.plist */,
 				A20735031BC97E1200CEF141 /* Loxone.swift */,
-				A20735051BC97EF900CEF141 /* BadController.swift */,
-				A20735071BC9802700CEF141 /* FlurController.swift */,
-				A20735091BC9808300CEF141 /* SchlafzimmerController.swift */,
-				A207350B1BC981F500CEF141 /* BalkonController.swift */,
-				A207350D1BC985D100CEF141 /* NoraController.swift */,
+				A2DFD8281BE271B800D1DF88 /* ActorController.swift */,
 			);
 			path = "HomeControl WatchKit Extension";
 			sourceTree = "<group>";
@@ -357,13 +345,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A20735041BC97E1200CEF141 /* Loxone.swift in Sources */,
+				A2DFD8291BE271B800D1DF88 /* ActorController.swift in Sources */,
 				A22B4FE91BC906730062970C /* ExtensionDelegate.swift in Sources */,
-				A207350C1BC981F500CEF141 /* BalkonController.swift in Sources */,
-				A207350E1BC985D100CEF141 /* NoraController.swift in Sources */,
-				A207350A1BC9808300CEF141 /* SchlafzimmerController.swift in Sources */,
-				A20735081BC9802700CEF141 /* FlurController.swift in Sources */,
 				A22B4FE71BC906730062970C /* InterfaceController.swift in Sources */,
-				A20735061BC97EF900CEF141 /* BadController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

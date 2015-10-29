@@ -6,8 +6,19 @@
 //  Copyright © 2015 Christoph Eicke. All rights reserved.
 //
 
+//
+// TODO
+// - only send actors that have a UUID
+// - remove the "Optional(0)" before sending the values
+// - refactor the sending of values
+// - layout the actor settings and server settings differently
+// - make the views respond to size classes
+// - unwind the segues correctly
+//
+
 import UIKit
 import WatchConnectivity
+import CoreData
 
 class ViewController: UIViewController, WCSessionDelegate {
     
@@ -66,6 +77,29 @@ class ViewController: UIViewController, WCSessionDelegate {
                         title = "Fehler"
                         message = "Fehler bei der Kommunikation mit der Apple Watch."
                 })
+
+                var actorData = Dictionary<String, String>()
+                
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                let managedObjectContext = appDelegate.managedObjectContext
+                
+                let fetchRequest = NSFetchRequest(entityName: "Actor")
+
+                var actors  = [Actor]()
+                actors = (try! managedObjectContext!.executeFetchRequest(fetchRequest)) as! [Actor]
+                if actors.count > 0 {
+                    for actor in actors {
+                        let uuid = actor.uuid as String!
+                        let scene = String(actor.scene)
+                        let dimmable = String(actor.dimmable)
+                        actorData[actor.name!] = "\(uuid);\(scene);\(dimmable)"
+                    }
+                } else {
+                    print("Could not find any Actor entities in the context")
+                }
+                
+                try! session.updateApplicationContext(["appData" : actorData])
+                
             } else {
                 title = "Fehler"
                 message = "AppleWatch nicht in Reichweite."
