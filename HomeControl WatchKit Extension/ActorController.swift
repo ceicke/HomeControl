@@ -17,26 +17,44 @@ class ActorController: WKInterfaceController {
     var name : NSString = ""
     var uuid : NSString = ""
     var scene : NSString = ""
-    var dimmable : NSString = ""
+    var dimmable : Bool = false
 
     @IBAction func actorOn() {
-        loxone.tellLoxone(uuid, onOff: "on")
+        if !dimmable {
+            loxone.tellLoxone(uuid, onOff: "on", scene: scene)
+        } else {
+            loxone.tellLoxone(uuid, onOff: "on", scene: scene, dimmValue: 100)
+            dimmer.setValue(100)
+        }
     }
     
     @IBAction func actorOff() {
-        loxone.tellLoxone(uuid, onOff: "off")
+        if !dimmable {
+            loxone.tellLoxone(uuid, onOff: "off", scene: scene)
+        } else {
+            loxone.tellLoxone(uuid, onOff: "off", scene: scene, dimmValue: 0)
+            dimmer.setValue(0)
+        }
     }
     
-    
     @IBOutlet var dimmer: WKInterfaceSlider!
+    
+    @IBAction func dimmerTouched(value: Float) {
+        loxone.tellLoxone(uuid, onOff: "on", scene: scene, dimmValue: Int(value))
+    }
     
     override func awakeWithContext(context: AnyObject?) {
         name = context!["name"] as! NSString
         uuid = context!["uuid"] as! NSString
         scene = context!["scene"] as! NSString
-        dimmable = context!["dimmable"] as! NSString
         
-        dimmer.setHidden(true)
+        if context!["dimmable"] as! NSString == "Optional(0)" {
+            dimmable = false
+            dimmer.setHidden(true)
+        } else {
+            dimmable = true
+            dimmer.setHidden(false)
+        }
         
         self.setTitle(name as String)
     }

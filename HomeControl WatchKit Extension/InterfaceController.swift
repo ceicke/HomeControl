@@ -6,12 +6,6 @@
 //  Copyright © 2015 Christoph Eicke. All rights reserved.
 //
 
-
-//
-// TODO
-// - parse the dimmable parameter correctly
-//
-
 import WatchKit
 import Foundation
 import WatchConnectivity
@@ -85,6 +79,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         
         for(actorName, actorParameters) in appData {
             let actorParametersArray = actorParameters.componentsSeparatedByString(";")
+            
             let tempDictionary = ["name" : actorName, "uuid" : actorParametersArray[0], "scene" : actorParametersArray[1], "dimmable" : actorParametersArray[2]]
             self.actorDictionary[actorName] = tempDictionary
         }
@@ -114,6 +109,12 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     }
     
     func populatePicker() {
+        if Array(actorDictionary.keys).count == 0 {
+            return
+        }
+        
+        pickerItemArr = [WKPickerItem]()
+        
         for(actorName) in Array(actorDictionary.keys) {
             let k = WKPickerItem()
             k.title = actorName

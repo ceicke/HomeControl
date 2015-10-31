@@ -22,7 +22,7 @@ class ActorDetailController: UIViewController {
     @IBAction func saveActor(sender: UIButton) {
         actor?.setValue(actorName.text, forKey: "name")
         actor?.setValue(actorUUID.text, forKey: "uuid")
-        actor?.setValue(Int(actorScene.text!), forKey: "scene")
+        actor?.setValue(actorScene.text, forKey: "scene")
         actor?.setValue(actorDimmable.on, forKey: "dimmable")
         
         do {
@@ -40,7 +40,7 @@ class ActorDetailController: UIViewController {
             actorUUID.text = uuid
         }
         if let scene = actor!.scene {
-            actorScene.text = String(scene)
+            actorScene.text = scene
         }
         if let dimmable = actor!.dimmable {
             actorDimmable.setOn(Bool(dimmable), animated: true)

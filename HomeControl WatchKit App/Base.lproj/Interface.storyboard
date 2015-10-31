@@ -45,7 +45,11 @@
                                 <action selector="actorOff" destination="jdN-kr-U62" id="4hh-fP-kNx"/>
                             </connections>
                         </button>
-                        <slider width="1" alignment="left" maximum="100" steps="10" id="qB9-4V-PB7"/>
+                        <slider width="1" alignment="left" maximum="100" steps="10" id="qB9-4V-PB7">
+                            <connections>
+                                <action selector="dimmerTouched:" destination="jdN-kr-U62" id="mht-fu-OLG"/>
+                            </connections>
+                        </slider>
                     </items>
                     <connections>
                         <outlet property="dimmer" destination="qB9-4V-PB7" id="kzD-sg-3Ds"/>

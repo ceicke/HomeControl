@@ -90,7 +90,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                 if actors.count > 0 {
                     for actor in actors {
                         let uuid = actor.uuid as String!
-                        let scene = String(actor.scene)
+                        let scene = actor.scene as String!
                         let dimmable = String(actor.dimmable)
                         actorData[actor.name!] = "\(uuid);\(scene);\(dimmable)"
                     }
