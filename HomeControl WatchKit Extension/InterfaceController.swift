@@ -9,9 +9,6 @@
 
 //
 // TODO
-// - Save and restore the actorDictionary and pickerItemArr
-// - remove the okAction
-// - show the "NoSettingsFound" also when no actors where sent
 // - parse the dimmable parameter correctly
 //
 
@@ -43,6 +40,11 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         
         if !loadConnectionSettings() {
             presentControllerWithName("NoSettingsFound", context: ["seague": "hierachical", "data": "Passed through page-based navigator"])
+        } else {
+            let sharedDefaults = NSUserDefaults.standardUserDefaults()
+            sharedDefaults.synchronize()
+            actorDictionary = sharedDefaults.valueForKey("actorDictionary") as! Dictionary
+            populatePicker()
         }
     }
         
@@ -79,22 +81,20 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     // receive and save actor settings
     func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
         let appData: Dictionary<String, String> = (applicationContext["appData"] as? Dictionary)!
+        self.actorDictionary = [:]
         
         for(actorName, actorParameters) in appData {
-            let k = WKPickerItem()
-            k.title = actorName
-            pickerItemArr.append(k)
-            
             let actorParametersArray = actorParameters.componentsSeparatedByString(";")
             let tempDictionary = ["name" : actorName, "uuid" : actorParametersArray[0], "scene" : actorParametersArray[1], "dimmable" : actorParametersArray[2]]
             self.actorDictionary[actorName] = tempDictionary
         }
         
-        roomPicker?.setItems(pickerItemArr)
-        roomPicker?.setSelectedItemIndex(selectedItem)
+        populatePicker()
         
-        let okAction = WKAlertAction(title: "OK", style: .Default) {}
-        presentAlertControllerWithTitle("Hallo", message: "Daten erfolgreich empfangen", preferredStyle: .Alert, actions: [okAction])
+        dispatch_async(dispatch_get_main_queue()) {
+            NSUserDefaults.standardUserDefaults().setObject(self.actorDictionary, forKey: "actorDictionary")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
     }
 
     override func didDeactivate() {
@@ -106,10 +106,22 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         let sharedDefaults = NSUserDefaults.standardUserDefaults()
         sharedDefaults.synchronize()
         
-        if (sharedDefaults.valueForKey("serverUrl") != nil && sharedDefaults.valueForKey("username") != nil && sharedDefaults.valueForKey("password") != nil) {
+        if (sharedDefaults.valueForKey("serverUrl") != nil && sharedDefaults.valueForKey("username") != nil && sharedDefaults.valueForKey("password") != nil && sharedDefaults.valueForKey("actorDictionary") != nil) {
             return true
         } else {
             return false
         }
+    }
+    
+    func populatePicker() {
+        for(actorName) in Array(actorDictionary.keys) {
+            let k = WKPickerItem()
+            k.title = actorName
+            pickerItemArr.append(k)
+        }
+        
+        roomPicker?.setItems(pickerItemArr)
+        roomPicker?.setSelectedItemIndex(selectedItem)
+        nextButton.setTitle(pickerItemArr[selectedItem].title)
     }
 }

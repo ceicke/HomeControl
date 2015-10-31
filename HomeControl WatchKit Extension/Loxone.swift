@@ -24,8 +24,9 @@ struct Loxone {
         }
         
         if url != "" {
+            print(url)
             let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
-                print(response)
+                print(data, response)
             }
             
             task.resume()
