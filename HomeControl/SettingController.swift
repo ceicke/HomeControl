@@ -121,7 +121,7 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
             try managedContext!.save()
             settings.append(setting)
         } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
+            NSLog("Could not save \(error), \(error.userInfo)")
         }
     }
 }

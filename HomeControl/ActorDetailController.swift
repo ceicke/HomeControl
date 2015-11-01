@@ -28,7 +28,7 @@ class ActorDetailController: UIViewController {
         do {
             try managedObjectContext!.save()
         } catch let error as NSError {
-            print("Could not save the actor. Error: \(error)")
+            NSLog("Could not save the actor. Error: \(error)")
         }
     }
     
@@ -62,7 +62,17 @@ class ActorDetailController: UIViewController {
             do {
                 try managedObjectContext!.save()
             } catch let error as NSError {
-                print("Could not save the actor. Error: \(error)")
+                NSLog("Could not save the actor. Error: \(error)")
+            }
+        }
+        
+        if segue.identifier == "DeleteActor" {
+            managedObjectContext?.deleteObject(actor!)
+            
+            do {
+                try managedObjectContext!.save()
+            } catch let error as NSError {
+                NSLog("Could not save the actor. Error: \(error)")
             }
         }
     }

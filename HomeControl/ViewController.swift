@@ -9,9 +9,7 @@
 //
 // TODO
 // - refactor the sending of values
-// - make the views respond to size classes
 // - unwind the segues correctly
-// - delete actors
 //
 
 import UIKit
@@ -93,7 +91,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                         }
                     }
                 } else {
-                    print("Could not find any Actor entities in the context")
+                    NSLog("Could not find any Actor entities in the context")
                 }
                 
                 try! session.updateApplicationContext(["appData" : actorData])
