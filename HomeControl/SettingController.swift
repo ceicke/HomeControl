@@ -76,8 +76,9 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
             try managedContext!.executeFetchRequest(fetchRequest)
             settings = results as! [NSManagedObject]
         } catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
+            NSLog("Could not fetch \(error), \(error.userInfo)")
         }
+        self.tableView.reloadData()
     }
     
     override func tableView(tableView: UITableView,

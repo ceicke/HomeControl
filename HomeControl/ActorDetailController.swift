@@ -30,6 +30,24 @@ class ActorDetailController: UIViewController {
         } catch let error as NSError {
             NSLog("Could not save the actor. Error: \(error)")
         }
+        
+        if let navController = self.navigationController {
+            navController.popViewControllerAnimated(true)
+        }
+    }
+    
+    @IBAction func deleteAction(sender: AnyObject) {
+        managedObjectContext?.deleteObject(actor!)
+        
+        do {
+            try managedObjectContext!.save()
+        } catch let error as NSError {
+            NSLog("Could not save the actor. Error: \(error)")
+        }
+        
+        if let navController = self.navigationController {
+            navController.popViewControllerAnimated(true)
+        }
     }
     
     func configureView() {
@@ -50,31 +68,6 @@ class ActorDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "SaveActor" {
-            actor?.setValue(actorName.text, forKey: "name")
-            actor?.setValue(actorUUID.text, forKey: "uuid")
-            actor?.setValue(Int(actorScene.text!), forKey: "scene")
-            actor?.setValue(actorDimmable.on, forKey: "dimmable")
-            
-            do {
-                try managedObjectContext!.save()
-            } catch let error as NSError {
-                NSLog("Could not save the actor. Error: \(error)")
-            }
-        }
-        
-        if segue.identifier == "DeleteActor" {
-            managedObjectContext?.deleteObject(actor!)
-            
-            do {
-                try managedObjectContext!.save()
-            } catch let error as NSError {
-                NSLog("Could not save the actor. Error: \(error)")
-            }
-        }
     }
 
 }

@@ -177,7 +177,7 @@
                                 <animations/>
                                 <state key="normal" title="Löschen"/>
                                 <connections>
-                                    <segue destination="q49-Nb-HyH" kind="push" identifier="DeleteActor" id="dnW-WU-7y3"/>
+                                    <action selector="deleteAction:" destination="fj9-H6-aTo" eventType="touchUpInside" id="S7n-vq-nRc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="krA-15-FF1">
@@ -187,7 +187,6 @@
                                 <state key="normal" title="Speichern"/>
                                 <connections>
                                     <action selector="saveActor:" destination="fj9-H6-aTo" eventType="touchUpInside" id="fBg-9r-nN5"/>
-                                    <segue destination="q49-Nb-HyH" kind="push" identifier="actorSaved" id="keu-nh-uBr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -226,7 +225,4 @@
             <point key="canvasLocation" x="176" y="395"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="vfd-3e-ZIS"/>
-    </inferredMetricsTieBreakers>
 </document>
