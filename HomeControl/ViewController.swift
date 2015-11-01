@@ -8,12 +8,10 @@
 
 //
 // TODO
-// - only send actors that have a UUID
-// - remove the "Optional(0)" before sending the values
 // - refactor the sending of values
-// - layout the actor settings and server settings differently
 // - make the views respond to size classes
 // - unwind the segues correctly
+// - delete actors
 //
 
 import UIKit
@@ -30,7 +28,6 @@ class ViewController: UIViewController, WCSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         if (WCSession.isSupported()) {
             session = WCSession.defaultSession()
@@ -51,7 +48,6 @@ class ViewController: UIViewController, WCSessionDelegate {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func saveValues(sender: UIButton) {
@@ -89,10 +85,12 @@ class ViewController: UIViewController, WCSessionDelegate {
                 actors = (try! managedObjectContext!.executeFetchRequest(fetchRequest)) as! [Actor]
                 if actors.count > 0 {
                     for actor in actors {
-                        let uuid = actor.uuid as String!
-                        let scene = actor.scene as String!
-                        let dimmable = String(actor.dimmable)
-                        actorData[actor.name!] = "\(uuid);\(scene);\(dimmable)"
+                        if (actor.uuid != nil) {
+                            let uuid = actor.uuid as String!
+                            let scene = actor.scene as String!
+                            let dimmable = String(actor.dimmable)
+                            actorData[actor.name!] = "\(uuid);\(scene);\(dimmable)"
+                        }
                     }
                 } else {
                     print("Could not find any Actor entities in the context")

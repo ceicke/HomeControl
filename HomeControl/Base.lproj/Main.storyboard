@@ -16,58 +16,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Loxone Server Konfiguration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAF-1t-iVl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loxone Server Konfiguration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAF-1t-iVl">
                                 <rect key="frame" x="52" y="72" width="216" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Miniserver IP" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9oD-fc-Kw0">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Miniserver IP" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9oD-fc-Kw0">
                                 <rect key="frame" x="20" y="113" width="280" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Benutzername" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6I2-Cz-lhj">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Benutzername" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6I2-Cz-lhj">
                                 <rect key="frame" x="20" y="151" width="280" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cLR-6w-cai">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cLR-6w-cai">
                                 <rect key="frame" x="20" y="189" width="280" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRB-e8-SV7">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRB-e8-SV7">
                                 <rect key="frame" x="20" y="227" width="280" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Konfiguration an AppleWatch senden"/>
+                                <state key="normal" title="An AppleWatch senden"/>
                                 <connections>
                                     <action selector="saveValues:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qEC-G9-o0z"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncL-M2-Nx6">
-                                <rect key="frame" x="86" y="274" width="148" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Aktoren konfigurieren"/>
-                                <connections>
-                                    <segue destination="q49-Nb-HyH" kind="push" id="vfd-3e-ZIS"/>
                                 </connections>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="cLR-6w-cai" firstAttribute="height" secondItem="9oD-fc-Kw0" secondAttribute="height" id="E6Z-TC-XFs"/>
-                            <constraint firstItem="6I2-Cz-lhj" firstAttribute="height" secondItem="9oD-fc-Kw0" secondAttribute="height" id="KTa-Q9-Je1"/>
-                            <constraint firstItem="eRB-e8-SV7" firstAttribute="height" secondItem="9oD-fc-Kw0" secondAttribute="height" id="Rtm-kc-cvO"/>
-                            <constraint firstItem="lAF-1t-iVl" firstAttribute="height" secondItem="9oD-fc-Kw0" secondAttribute="height" id="Xrx-Rw-uJp"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="nGe-pT-Lwg"/>
+                    <navigationItem key="navigationItem" id="nGe-pT-Lwg">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="ntB-gB-ce3">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ncL-M2-Nx6">
+                                <rect key="frame" x="250" y="7" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <state key="normal" title="Aktoren"/>
+                                <connections>
+                                    <segue destination="q49-Nb-HyH" kind="push" id="vfd-3e-ZIS"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="loxonePassword" destination="cLR-6w-cai" id="cUQ-5b-GZn"/>
                         <outlet property="loxoneServerUrl" destination="9oD-fc-Kw0" id="YLf-SM-fyT"/>
@@ -89,7 +88,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="Ixi-HJ-hZH" rowHeight="44" style="IBUITableViewCellStyleDefault" id="U31-9b-aiE">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U31-9b-aiE" id="ODO-a3-cDC">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
@@ -216,6 +215,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="keu-nh-uBr"/>
+        <segue reference="vfd-3e-ZIS"/>
     </inferredMetricsTieBreakers>
 </document>

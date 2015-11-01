@@ -10,6 +10,10 @@ import WatchKit
 import Foundation
 import WatchConnectivity
 
+//
+// TODO
+// - show an error message when the GET call did not go through
+
 class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     var session : WCSession!
