@@ -20,7 +20,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo-White" id="zTo-yq-SnD">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-White" id="zTo-yq-SnD">
                                 <rect key="frame" x="64" y="188" width="192" height="192"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <animations/>
@@ -36,6 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo-White" width="512" height="512"/>
+        <image name="Icon-White" width="512" height="512"/>
     </resources>
 </document>
