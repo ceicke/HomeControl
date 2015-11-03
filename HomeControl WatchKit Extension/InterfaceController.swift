@@ -84,7 +84,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         for(actorName, actorParameters) in appData {
             let actorParametersArray = actorParameters.componentsSeparatedByString(";")
             
-            let tempDictionary = ["name" : actorName, "uuid" : actorParametersArray[0], "scene" : actorParametersArray[1], "dimmable" : actorParametersArray[2]]
+            let tempDictionary = ["name" : actorName, "uuid" : actorParametersArray[0], "scene" : actorParametersArray[1], "dimmable" : actorParametersArray[2], "order" : actorParametersArray[3]]
             self.actorDictionary[actorName] = tempDictionary
         }
         
@@ -119,10 +119,17 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         
         pickerItemArr = [WKPickerItem]()
         
-        for(actorName) in Array(actorDictionary.keys) {
-            let k = WKPickerItem()
-            k.title = actorName
-            pickerItemArr.append(k)
+        var actorArray = Array(actorDictionary.keys)
+        var sortedKeys = actorArray.sortInPlace() {
+            var obj1 = actorDictionary[$0] // get ob associated w/ key 1
+            var obj2 = actorDictionary[$1] // get ob associated w/ key 2
+            return obj1!["order"] < obj2!["order"]
+        }
+        
+        for actorName in actorArray {
+            let pickerItem = WKPickerItem()
+            pickerItem.title = actorName
+            pickerItemArr.append(pickerItem)
         }
         
         roomPicker?.setItems(pickerItemArr)

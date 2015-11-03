@@ -36,20 +36,6 @@ class ActorDetailController: UIViewController {
         }
     }
     
-    @IBAction func deleteAction(sender: AnyObject) {
-        managedObjectContext?.deleteObject(actor!)
-        
-        do {
-            try managedObjectContext!.save()
-        } catch let error as NSError {
-            NSLog("Could not save the actor. Error: \(error)")
-        }
-        
-        if let navController = self.navigationController {
-            navController.popViewControllerAnimated(true)
-        }
-    }
-    
     func configureView() {
         if let name = actor!.name {
             actorName.text = name

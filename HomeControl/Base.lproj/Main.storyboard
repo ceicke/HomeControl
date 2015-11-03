@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="RpJ-t5-yM4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -92,11 +93,11 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U31-9b-aiE" id="ODO-a3-cDC">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ixi-HJ-hZH">
-                                            <rect key="frame" x="15" y="0.0" width="270" height="44"/>
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -118,12 +119,22 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="OV2-de-5w6">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4Nm-Br-naC">
-                            <connections>
-                                <action selector="addSetting:" destination="q49-Nb-HyH" id="WEl-0F-tTO"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="4Nm-Br-naC">
+                                <connections>
+                                    <action selector="addSetting:" destination="q49-Nb-HyH" id="WEl-0F-tTO"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="edit" id="tXh-4U-J2p">
+                                <connections>
+                                    <action selector="editActorList:" destination="q49-Nb-HyH" id="9lj-9V-eUf"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="editActorButton" destination="tXh-4U-J2p" id="nN2-6h-ZTm"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgd-aF-cVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -171,15 +182,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ktJ-7U-N5y">
-                                <rect key="frame" x="242" y="70" width="58" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <state key="normal" title="Löschen"/>
-                                <connections>
-                                    <action selector="deleteAction:" destination="fj9-H6-aTo" eventType="touchUpInside" id="S7n-vq-nRc"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="krA-15-FF1">
                                 <rect key="frame" x="125" y="269" width="70" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>

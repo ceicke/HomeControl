@@ -48,7 +48,7 @@ class ActorController: WKInterfaceController {
         uuid = context!["uuid"] as! NSString
         scene = context!["scene"] as! NSString
         
-        if context!["dimmable"] as! NSString == "Optional(0)" {
+        if context!["dimmable"] as! NSString == "0" {
             dimmable = false
             dimmer.setHidden(true)
         } else {
