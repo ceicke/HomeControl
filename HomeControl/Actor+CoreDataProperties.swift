@@ -18,5 +18,6 @@ extension Actor {
     @NSManaged var uuid: String?
     @NSManaged var scene: String?
     @NSManaged var dimmable: NSNumber?
+    @NSManaged var order: NSNumber?
 
 }

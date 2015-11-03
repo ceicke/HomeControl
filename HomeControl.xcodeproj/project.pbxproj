@@ -93,6 +93,7 @@
 		A26A36141BD1401400DA7622 /* LoxoneConfiguration.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoxoneConfiguration.xcdatamodel; sourceTree = "<group>"; };
 		A2954D801BE1174200903087 /* Actor+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Actor+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A2954D811BE1174200903087 /* Actor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
+		A2AFB3141BE916560021E993 /* LoxoneConfigurationWithOrdering.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoxoneConfigurationWithOrdering.xcdatamodel; sourceTree = "<group>"; };
 		A2DFD8281BE271B800D1DF88 /* ActorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -622,9 +623,10 @@
 		A26A36131BD1401400DA7622 /* LoxoneConfiguration.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				A2AFB3141BE916560021E993 /* LoxoneConfigurationWithOrdering.xcdatamodel */,
 				A26A36141BD1401400DA7622 /* LoxoneConfiguration.xcdatamodel */,
 			);
-			currentVersion = A26A36141BD1401400DA7622 /* LoxoneConfiguration.xcdatamodel */;
+			currentVersion = A2AFB3141BE916560021E993 /* LoxoneConfigurationWithOrdering.xcdatamodel */;
 			path = LoxoneConfiguration.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

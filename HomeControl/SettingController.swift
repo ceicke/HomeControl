@@ -13,6 +13,9 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
     
     var settings = [NSManagedObject]()
     
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    var managedContext = NSManagedObjectContext()
+    
     @IBAction func addSetting(sender: AnyObject) {
         let alert = UIAlertController(
             title: "Neuer Aktor",
@@ -49,19 +52,28 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
             completion: nil)
     }
     
-    @IBAction func editActorList(sender: AnyObject) {
-        self.tableView.editing = !self.tableView.editing
+    @IBOutlet weak var editActorButton: UIBarButtonItem!
+    
+    @IBAction func editActorList(sender: UIBarButtonItem) {
+        
+        if self.tableView.editing {
+            self.tableView.setEditing(false, animated: true)
+            editActorButton.title = "Bearbeiten"
+            saveOrdering()
+        } else {
+            self.tableView.setEditing(true, animated: false)
+            editActorButton.title = "Fertig"
+        }
     }
     
     override func viewDidLoad() {
+        managedContext = appDelegate.managedObjectContext!
         super.viewDidLoad()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showActorDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                
                 (segue.destinationViewController as! ActorDetailController).actor = settings[indexPath.row] as? Actor
                 (segue.destinationViewController as! ActorDetailController).managedObjectContext = appDelegate.managedObjectContext
                 
@@ -72,16 +84,12 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        let appDelegate =
-        UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        let managedContext = appDelegate.managedObjectContext
-        
         let fetchRequest = NSFetchRequest(entityName: "Actor")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "order", ascending: true)]
         
         do {
             let results =
-            try managedContext!.executeFetchRequest(fetchRequest)
+            try managedContext.executeFetchRequest(fetchRequest)
             settings = results as! [NSManagedObject]
         } catch let error as NSError {
             NSLog("Could not fetch \(error), \(error.userInfo)")
@@ -111,13 +119,11 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
         forRowAtIndexPath indexPath: NSIndexPath) {
             switch editingStyle {
             case .Delete:
-                let appDelegate =
-                UIApplication.sharedApplication().delegate as! AppDelegate
-                let managedContext = appDelegate.managedObjectContext
-                managedContext?.deleteObject(self.settings[indexPath.row])
+                
+                managedContext.deleteObject(self.settings[indexPath.row])
                 
                 do {
-                    try managedContext!.save()
+                    try managedContext.save()
                 } catch let error as NSError {
                     NSLog("Could not save the actor. Error: \(error)")
                 }
@@ -153,20 +159,27 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
     }
     
     func saveSetting(name: String) {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        let managedContext = appDelegate.managedObjectContext
-        
-        let entity =  NSEntityDescription.entityForName("Actor", inManagedObjectContext:managedContext!)
-        
+        let entity =  NSEntityDescription.entityForName("Actor", inManagedObjectContext:managedContext)
         let setting = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
         
         setting.setValue(name, forKey: "name")
         
         do {
-            try managedContext!.save()
+            try managedContext.save()
             settings.append(setting)
         } catch let error as NSError  {
+            NSLog("Could not save \(error), \(error.userInfo)")
+        }
+    }
+    
+    func saveOrdering() {
+        for (index, setting) in self.settings.enumerate() {
+            setting.setValue(index, forKey: "order")
+        }
+
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
             NSLog("Could not save \(error), \(error.userInfo)")
         }
     }
