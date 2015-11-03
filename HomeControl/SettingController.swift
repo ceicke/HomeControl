@@ -14,14 +14,15 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
     var settings = [NSManagedObject]()
     
     @IBAction func addSetting(sender: AnyObject) {
-        let alert = UIAlertController(title: "Neuer Aktor",
-            message: "Neuen Aktor hinzufügen",
-            preferredStyle: .Alert)
+        let alert = UIAlertController(
+            title: "Neuer Aktor",
+            message: nil,
+            preferredStyle: .Alert
+        )
         
         let saveAction = UIAlertAction(title: "Speichern",
             style: .Default,
             handler: { (action:UIAlertAction) -> Void in
-                
                 let textField = alert.textFields!.first
                 self.saveSetting(textField!.text!)
                 self.tableView.reloadData()
@@ -32,8 +33,13 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
         }
         
         alert.addTextFieldWithConfigurationHandler {
-            (textField: UITextField) -> Void in
+            (textField) -> Void in
         }
+        
+        let textField = alert.textFields!.first
+        textField!.autocapitalizationType = UITextAutocapitalizationType.Words
+        textField!.autocorrectionType = UITextAutocorrectionType.Default
+        textField!.placeholder = "Name des Aktors"
         
         alert.addAction(cancelAction)
         alert.addAction(saveAction)
