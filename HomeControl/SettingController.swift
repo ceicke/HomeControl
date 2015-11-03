@@ -49,15 +49,17 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
             completion: nil)
     }
     
+    @IBAction func editActorList(sender: AnyObject) {
+        self.tableView.editing = !self.tableView.editing
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Aktoren"
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showActorDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                print(settings[indexPath.row])
                 let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                 
                 (segue.destinationViewController as! ActorDetailController).actor = settings[indexPath.row] as? Actor
@@ -101,6 +103,43 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
             self.configureCell(cell, atIndexPath: indexPath)
             
             return cell
+    }
+    
+    // called when a row deletion action is confirmed
+    override func tableView(tableView: UITableView,
+        commitEditingStyle editingStyle: UITableViewCellEditingStyle,
+        forRowAtIndexPath indexPath: NSIndexPath) {
+            switch editingStyle {
+            case .Delete:
+                let appDelegate =
+                UIApplication.sharedApplication().delegate as! AppDelegate
+                let managedContext = appDelegate.managedObjectContext
+                managedContext?.deleteObject(self.settings[indexPath.row])
+                
+                do {
+                    try managedContext!.save()
+                } catch let error as NSError {
+                    NSLog("Could not save the actor. Error: \(error)")
+                }
+                
+                self.settings.removeAtIndex(indexPath.row)
+                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                self.tableView.reloadData()
+                
+            default:
+                return
+            }
+    }
+    
+    // called when a row is moved
+    override func tableView(tableView: UITableView,
+        moveRowAtIndexPath sourceIndexPath: NSIndexPath,
+        toIndexPath destinationIndexPath: NSIndexPath) {
+            // remove the dragged row's model
+            let val = self.settings.removeAtIndex(sourceIndexPath.row)
+            
+            // insert it into the new position
+            self.settings.insert(val, atIndex: destinationIndexPath.row)
     }
     
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
