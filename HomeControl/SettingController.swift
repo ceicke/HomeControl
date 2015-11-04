@@ -59,6 +59,7 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
         if self.tableView.editing {
             self.tableView.setEditing(false, animated: true)
             editActorButton.title = "Bearbeiten"
+            
             saveOrdering()
         } else {
             self.tableView.setEditing(true, animated: false)
