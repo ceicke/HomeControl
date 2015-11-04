@@ -17,8 +17,6 @@ import WatchConnectivity
 class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     var session : WCSession!
-    var selectedItem : Int = 0
-    var pickerItemArr = [WKPickerItem]()
     var actorDictionary : [String:Dictionary<String, String>] = [:]
 
     override func awakeWithContext(context: AnyObject?) {
@@ -42,25 +40,11 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             let sharedDefaults = NSUserDefaults.standardUserDefaults()
             sharedDefaults.synchronize()
             actorDictionary = sharedDefaults.valueForKey("actorDictionary") as! Dictionary
-            populatePicker()
+            loadTableData()
         }
     }
-        
-    @IBOutlet var roomPicker: WKInterfacePicker!
     
-    @IBAction func pickerChanged(value: Int) {
-        selectedItem = value
-        nextButton.setTitle(pickerItemArr[value].title)
-    }
-    
-    @IBOutlet var nextButton: WKInterfaceButton!
-    
-    override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
-        if segueIdentifier == "ShowActor" {
-            return actorDictionary[pickerItemArr[selectedItem].title!]
-        }
-        return nil
-    }
+    @IBOutlet var actorTable: WKInterfaceTable!
     
     // receive and save basic connection settings
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
@@ -88,7 +72,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             self.actorDictionary[actorName] = tempDictionary
         }
         
-        populatePicker()
+        loadTableData()
         
         dispatch_async(dispatch_get_main_queue()) {
             NSUserDefaults.standardUserDefaults().setObject(self.actorDictionary, forKey: "actorDictionary")
@@ -97,8 +81,19 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     }
 
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+    }
+    
+    override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
+        
+        var actorArray = Array(actorDictionary.keys)
+        var _ = actorArray.sortInPlace() {
+            var obj1 = actorDictionary[$0]
+            var obj2 = actorDictionary[$1]
+            return obj1!["order"] < obj2!["order"]
+        }
+        
+        return actorDictionary[actorArray[rowIndex]]
     }
     
     func loadConnectionSettings() -> Bool {
@@ -112,28 +107,24 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         }
     }
     
-    func populatePicker() {
+    func loadTableData() {
         if Array(actorDictionary.keys).count == 0 {
             return
         }
         
-        pickerItemArr = [WKPickerItem]()
-        
         var actorArray = Array(actorDictionary.keys)
-        var sortedKeys = actorArray.sortInPlace() {
-            var obj1 = actorDictionary[$0] // get ob associated w/ key 1
-            var obj2 = actorDictionary[$1] // get ob associated w/ key 2
+        var _ = actorArray.sortInPlace() {
+            var obj1 = actorDictionary[$0]
+            var obj2 = actorDictionary[$1]
             return obj1!["order"] < obj2!["order"]
         }
         
-        for actorName in actorArray {
-            let pickerItem = WKPickerItem()
-            pickerItem.title = actorName
-            pickerItemArr.append(pickerItem)
-        }
+        actorTable.setNumberOfRows(actorArray.count, withRowType: "ActorRowController")
         
-        roomPicker?.setItems(pickerItemArr)
-        roomPicker?.setSelectedItemIndex(selectedItem)
-        nextButton.setTitle(pickerItemArr[selectedItem].title)
+        for (index, actorName) in actorArray.enumerate() {
+            if let row = actorTable.rowControllerAtIndex(index) as? ActorRowController {
+                row.actorName.setText(actorName)
+            }
+        }
     }
 }
