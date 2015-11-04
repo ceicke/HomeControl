@@ -33,10 +33,15 @@ struct Loxone {
         
         if url != "" {
             let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
-                print(response)
+                if let httpResponse = response as? NSHTTPURLResponse {
+                    if httpResponse.statusCode != 200 {
+                        NSLog("ERROR \(httpResponse.statusCode)")
+                    }
+                }
             }
             
             task.resume()
         }
     }
+    
 }

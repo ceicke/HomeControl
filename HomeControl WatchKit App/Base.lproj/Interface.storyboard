@@ -10,25 +10,28 @@
             <objects>
                 <controller title="Hauptmenü" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HomeControl_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <picker width="1" height="114" alignment="left" id="X0v-8W-FvS">
-                            <accessibilityTraits key="accessibilityTraits" button="YES" updatesFrequently="YES" adjustable="YES"/>
-                            <connections>
-                                <action selector="pickerChanged:" destination="AgC-eL-Hgc" id="Ddd-fP-Oxa"/>
-                            </connections>
-                        </picker>
-                        <button width="1" alignment="left" title="Button" id="yZM-hr-0gG">
-                            <connections>
-                                <segue destination="jdN-kr-U62" kind="push" identifier="ShowActor" id="ckZ-g8-XTq"/>
-                            </connections>
-                        </button>
+                        <table alignment="center" verticalAlignment="center" id="oh4-87-nMP">
+                            <items>
+                                <tableRow identifier="ActorRowController" id="ig0-5n-tO5" userLabel="mainRowType" customClass="ActorRowController" customModule="HomeControl_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="IeM-Wt-UR4">
+                                        <items>
+                                            <label width="131.5" height="36.5" alignment="left" text="Label" textAlignment="center" id="CZ1-BC-P2K"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="actorName" destination="CZ1-BC-P2K" id="hLS-9p-ubK"/>
+                                        <segue destination="jdN-kr-U62" kind="push" identifier="showActor" id="WX6-I0-Ctd"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
                     <connections>
-                        <outlet property="nextButton" destination="yZM-hr-0gG" id="Qul-hg-IiX"/>
-                        <outlet property="roomPicker" destination="X0v-8W-FvS" id="AM0-Cb-IV4"/>
+                        <outlet property="actorTable" destination="oh4-87-nMP" id="oWT-2C-REm"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="148" y="71.5"/>
+            <point key="canvasLocation" x="148" y="71"/>
         </scene>
         <!--Actor-->
         <scene sceneID="iG6-hJ-g0V">

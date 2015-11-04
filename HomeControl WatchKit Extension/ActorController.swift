@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 import WatchKit
 
 class ActorController: WKInterfaceController {
@@ -24,8 +23,9 @@ class ActorController: WKInterfaceController {
             loxone.tellLoxone(uuid, onOff: "on", scene: scene)
         } else {
             loxone.tellLoxone(uuid, onOff: "on", scene: scene, dimmValue: 100)
-            dimmer.setValue(100)
         }
+        
+        popController()
     }
     
     @IBAction func actorOff() {
@@ -33,8 +33,9 @@ class ActorController: WKInterfaceController {
             loxone.tellLoxone(uuid, onOff: "off", scene: scene)
         } else {
             loxone.tellLoxone(uuid, onOff: "off", scene: scene, dimmValue: 0)
-            dimmer.setValue(0)
         }
+        
+        popController()
     }
     
     @IBOutlet var dimmer: WKInterfaceSlider!
