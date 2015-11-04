@@ -120,7 +120,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         pickerItemArr = [WKPickerItem]()
         
         var actorArray = Array(actorDictionary.keys)
-        var sortedKeys = actorArray.sortInPlace() {
+        var _ = actorArray.sortInPlace() {
             var obj1 = actorDictionary[$0] // get ob associated w/ key 1
             var obj2 = actorDictionary[$1] // get ob associated w/ key 2
             return obj1!["order"] < obj2!["order"]

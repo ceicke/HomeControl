@@ -56,7 +56,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="nGe-pT-Lwg">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="ntB-gB-ce3">
+                        <barButtonItem key="rightBarButtonItem" id="ntB-gB-ce3">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ncL-M2-Nx6">
                                 <rect key="frame" x="250" y="7" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
