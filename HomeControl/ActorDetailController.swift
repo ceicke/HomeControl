@@ -25,6 +25,13 @@ class ActorDetailController: UIViewController {
         actor?.setValue(actorScene.text, forKey: "scene")
         actor?.setValue(actorDimmable.on, forKey: "dimmable")
         
+        if (!isUUIDvalid((actor?.uuid)!)) {
+            let alertController = UIAlertController(title: "Fehler", message: "Die eingegebene UUID hat das falsche Format.", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
+            return
+        }
+        
         do {
             try managedObjectContext!.save()
         } catch let error as NSError {
@@ -54,6 +61,15 @@ class ActorDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
+    }
+    
+    func isUUIDvalid(uuid: String)-> Bool {
+        
+        let regex = try! NSRegularExpression(pattern: "^[0-9a-f]{8}-[0-9]{4}-[0-9a-f]{4}-[0-9a-f]{16}$", options: [.CaseInsensitive])
+        let textString = uuid as NSString
+        let matches = regex.matchesInString(uuid, options: [], range: NSMakeRange(0, textString.length))
+        
+        return matches.count > 0
     }
 
 }
