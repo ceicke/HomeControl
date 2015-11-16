@@ -19,6 +19,7 @@
                                         </items>
                                     </group>
                                     <connections>
+                                        <outlet property="actorGroup" destination="IeM-Wt-UR4" id="ViV-L7-FYl"/>
                                         <outlet property="actorName" destination="CZ1-BC-P2K" id="hLS-9p-ubK"/>
                                         <segue destination="jdN-kr-U62" kind="push" identifier="showActor" id="WX6-I0-Ctd"/>
                                     </connections>
@@ -39,16 +40,18 @@
                 <controller identifier="Actor" id="jdN-kr-U62" customClass="ActorController" customModule="HomeControl_WatchKit_Extension">
                     <items>
                         <button width="1" alignment="left" title="An" id="uaj-Jp-ktK">
+                            <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="actorOn" destination="jdN-kr-U62" id="1Bs-34-kz1"/>
                             </connections>
                         </button>
                         <button width="1" alignment="left" title="Aus" id="hgi-nX-kwR">
+                            <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="actorOff" destination="jdN-kr-U62" id="4hh-fP-kNx"/>
                             </connections>
                         </button>
-                        <slider width="1" alignment="left" maximum="100" steps="10" id="qB9-4V-PB7">
+                        <slider width="1" alignment="left" minimum="-1" maximum="100" steps="10" id="qB9-4V-PB7">
                             <connections>
                                 <action selector="dimmerTouched:" destination="jdN-kr-U62" id="mht-fu-OLG"/>
                             </connections>
