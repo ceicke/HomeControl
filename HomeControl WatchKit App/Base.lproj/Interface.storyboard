@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9019"/>
     </dependencies>
     <scenes>
@@ -40,18 +40,19 @@
                 <controller identifier="Actor" id="jdN-kr-U62" customClass="ActorController" customModule="HomeControl_WatchKit_Extension">
                     <items>
                         <button width="1" alignment="left" title="An" id="uaj-Jp-ktK">
-                            <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.0039215686274509803" green="0.52549019607843139" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="actorOn" destination="jdN-kr-U62" id="1Bs-34-kz1"/>
                             </connections>
                         </button>
                         <button width="1" alignment="left" title="Aus" id="hgi-nX-kwR">
-                            <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.52549019607843139" green="0.0039215686274509803" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="actorOff" destination="jdN-kr-U62" id="4hh-fP-kNx"/>
                             </connections>
                         </button>
                         <slider width="1" alignment="left" minimum="-1" maximum="100" steps="10" id="qB9-4V-PB7">
+                            <color key="color" red="0.10763947665691376" green="0.82332384586334229" blue="0.68385863304138184" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="dimmerTouched:" destination="jdN-kr-U62" id="mht-fu-OLG"/>
                             </connections>
@@ -69,10 +70,15 @@
             <objects>
                 <controller identifier="NoSettingsFound" title="OK" hidesWhenLoading="NO" id="TQt-wK-Z7d">
                     <items>
-                        <label width="136" height="36.5" alignment="left" text="Keine Konfiguration gefunden" numberOfLines="4" id="RUa-Dr-aj1">
-                            <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="font" type="system" pointSize="14"/>
-                        </label>
+                        <group width="1" height="37" alignment="left" id="H4K-89-f4J">
+                            <items>
+                                <imageView width="32" height="32" alignment="left" image="Icon-White" id="GAo-zv-JGy"/>
+                                <label width="97" height="34" alignment="left" text="Keine Konfiguration" numberOfLines="4" id="RUa-Dr-aj1">
+                                    <color key="textColor" red="0.0039215686269999999" green="0.52549019610000003" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                </label>
+                            </items>
+                        </group>
                         <label width="1" height="112" alignment="left" textAlignment="center" numberOfLines="8" id="Ozu-tD-nNN">
                             <string key="text">Bitte öffne auf dem iPhone die HomeControl App und schicke die Aktoren und Benutzername/Passwort/IP des Miniservers an deine AppleWatch.</string>
                             <fontDescription key="font" type="system" pointSize="11"/>
@@ -80,7 +86,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="375" y="-195.25"/>
+            <point key="canvasLocation" x="375" y="-248"/>
         </scene>
     </scenes>
 </document>

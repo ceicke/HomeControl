@@ -125,8 +125,8 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             
             if let row = actorTable.rowControllerAtIndex(index) as? ActorRowController {
                 row.actorName.setText(actorName)
-                let alphaValue = Double(index + 1) * 0.5 / Double(actorArray.count)
-                let color : UIColor = UIColor.init(red: 0, green: 1.0, blue: 0, alpha: CGFloat(alphaValue))
+                let alphaValue = Double(index + 1) / Double(actorArray.count)
+                let color : UIColor = UIColor.init(red: 0, green: 0.53, blue: 0.46, alpha: CGFloat(alphaValue))
                 row.actorGroup.setBackgroundColor(color)
             }
         }
