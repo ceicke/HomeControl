@@ -9,6 +9,7 @@
 //
 // TODO
 // - refactor the sending of values
+// - test of all actors that were entered and mark actors as "broken" that do not respond with 200
 //
 
 import UIKit

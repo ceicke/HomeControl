@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9019"/>
     </dependencies>
     <scenes>
-        <!--Hauptmenü-->
+        <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller title="Hauptmenü" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HomeControl_WatchKit_App" customModuleProvider="target">
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HomeControl_WatchKit_App" customModuleProvider="target">
                     <items>
                         <table alignment="center" verticalAlignment="center" id="oh4-87-nMP">
                             <items>
@@ -27,6 +27,20 @@
                             </items>
                         </table>
                     </items>
+                    <menu key="menu" id="dWT-3s-PpS">
+                        <items>
+                            <menuItem title="Server Info" icon="info" id="PpW-oo-EYe">
+                                <connections>
+                                    <action selector="infoPressed" destination="AgC-eL-Hgc" id="MNM-So-Xel"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Letzte Antwort" icon="more" id="WWA-Wa-4Nn">
+                                <connections>
+                                    <action selector="lastResultPressed" destination="AgC-eL-Hgc" id="Tl6-WN-qKh"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="actorTable" destination="oh4-87-nMP" id="oWT-2C-REm"/>
                     </connections>
@@ -65,10 +79,59 @@
             </objects>
             <point key="canvasLocation" x="375" y="69"/>
         </scene>
-        <!--OK-->
+        <!--ServerInfo-->
+        <scene sceneID="BA2-Os-ShY">
+            <objects>
+                <controller identifier="ServerInfo" id="aWg-uy-cSt" customClass="ServerInfoController" customModule="HomeControl_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Name" id="vgz-NQ-cNI">
+                            <color key="textColor" red="0.0039215686269999999" green="0.52549019610000003" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label alignment="left" text="LabelName" id="uWa-dU-MRl"/>
+                        <label alignment="left" text="Version" id="Ucw-1o-dtT">
+                            <color key="textColor" red="0.0039215686269999999" green="0.52549019610000003" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label alignment="left" text="LabelVersion" id="w2R-Fw-qlN"/>
+                    </items>
+                    <connections>
+                        <outlet property="labelName" destination="uWa-dU-MRl" id="VPs-8a-WN2"/>
+                        <outlet property="labelVersion" destination="w2R-Fw-qlN" id="eVD-W3-E0d"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="148" y="-247"/>
+        </scene>
+        <!--LastResult-->
+        <scene sceneID="o8Z-Jr-pnV">
+            <objects>
+                <controller identifier="LastResult" id="UWG-up-0Dv" customClass="LastResultController" customModule="HomeControl_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Aktor" id="UKi-iz-Da7">
+                            <color key="textColor" red="0.0039215686269999999" green="0.52549019610000003" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label alignment="left" text="LastActor" id="JWJ-fa-U8w"/>
+                        <label alignment="left" text="Uhrzeit" id="uco-Ul-C9W">
+                            <color key="textColor" red="0.0039215686269999999" green="0.52549019610000003" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label alignment="left" text="LastResultDateTime" id="i9b-FR-sks"/>
+                        <label alignment="left" text="HTTP Status" id="lFq-5C-Xhf">
+                            <color key="textColor" red="0.0039215686269999999" green="0.52549019610000003" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label alignment="left" text="LastResult" id="fY1-ts-Ovz"/>
+                    </items>
+                    <connections>
+                        <outlet property="lastResultDateTimeLabel" destination="i9b-FR-sks" id="cWB-dS-ojr"/>
+                        <outlet property="lastResultLabel" destination="fY1-ts-Ovz" id="XGe-lC-6Uz"/>
+                        <outlet property="lastReusultActorLabel" destination="JWJ-fa-U8w" id="vUk-Dj-VPK"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="375" y="-247"/>
+        </scene>
+        <!--NoSettingsFound-->
         <scene sceneID="ffN-ie-sQ1">
             <objects>
-                <controller identifier="NoSettingsFound" title="OK" hidesWhenLoading="NO" id="TQt-wK-Z7d">
+                <controller identifier="NoSettingsFound" hidesWhenLoading="NO" id="TQt-wK-Z7d">
                     <items>
                         <group width="1" height="37" alignment="left" id="H4K-89-f4J">
                             <items>
@@ -86,7 +149,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="375" y="-248"/>
+            <point key="canvasLocation" x="148" y="387"/>
         </scene>
     </scenes>
 </document>

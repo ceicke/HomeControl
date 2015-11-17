@@ -8,8 +8,9 @@
 
 import Foundation
 
-struct Loxone {
-    func tellLoxone(uuid:NSString, onOff:NSString, scene:NSString = "", dimmValue:Int = -1) {
+class Loxone {
+    
+    func tellLoxone(actor:NSString, uuid:NSString, onOff:NSString, scene:NSString = "", dimmValue:Int = -1) {
         
         let loxoneLocalIP:NSString = NSUserDefaults.standardUserDefaults().valueForKey("serverUrl") as! NSString
         let username:NSString = NSUserDefaults.standardUserDefaults().valueForKey("username") as! NSString
@@ -34,6 +35,12 @@ struct Loxone {
         if url != "" {
             let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
                 if let httpResponse = response as? NSHTTPURLResponse {
+                    
+                    NSUserDefaults.standardUserDefaults().setObject(httpResponse.statusCode, forKey: "lastStatusCode")
+                    NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey: "lastStatusCodeDate")
+                    NSUserDefaults.standardUserDefaults().setObject(actor, forKey: "lastActor")
+                    NSUserDefaults.standardUserDefaults().synchronize()
+
                     if httpResponse.statusCode != 200 {
                         NSLog("ERROR \(httpResponse.statusCode)")
                     }
@@ -43,5 +50,4 @@ struct Loxone {
             task.resume()
         }
     }
-    
 }
