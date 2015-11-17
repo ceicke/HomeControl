@@ -133,15 +133,10 @@
             <objects>
                 <controller identifier="NoSettingsFound" hidesWhenLoading="NO" id="TQt-wK-Z7d">
                     <items>
-                        <group width="1" height="37" alignment="left" id="H4K-89-f4J">
-                            <items>
-                                <imageView width="32" height="32" alignment="left" image="Icon-White" id="GAo-zv-JGy"/>
-                                <label width="97" height="34" alignment="left" text="Keine Konfiguration" numberOfLines="4" id="RUa-Dr-aj1">
-                                    <color key="textColor" red="0.0039215686269999999" green="0.52549019610000003" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="font" type="system" pointSize="14"/>
-                                </label>
-                            </items>
-                        </group>
+                        <label width="136" height="15" alignment="left" text="Keine Konfiguration" textAlignment="center" numberOfLines="4" id="RUa-Dr-aj1">
+                            <color key="textColor" red="0.0039215686269999999" green="0.52549019610000003" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="14"/>
+                        </label>
                         <label width="1" height="112" alignment="left" textAlignment="center" numberOfLines="8" id="Ozu-tD-nNN">
                             <string key="text">Bitte öffne auf dem iPhone die HomeControl App und schicke die Aktoren und Benutzername/Passwort/IP des Miniservers an deine AppleWatch.</string>
                             <fontDescription key="font" type="system" pointSize="11"/>
