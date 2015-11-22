@@ -89,7 +89,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="Ixi-HJ-hZH" rowHeight="44" style="IBUITableViewCellStyleDefault" id="U31-9b-aiE">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" textLabel="Ixi-HJ-hZH" rowHeight="44" style="IBUITableViewCellStyleDefault" id="U31-9b-aiE" customClass="ActorCell" customModule="HomeControl" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U31-9b-aiE" id="ODO-a3-cDC">
@@ -104,11 +104,21 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gc2-4E-grj">
+                                            <rect key="frame" x="242" y="12" width="45" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
+                                    <outlet property="actorName" destination="Ixi-HJ-hZH" id="ybu-pj-hRX"/>
+                                    <outlet property="actorStatus" destination="gc2-4E-grj" id="9RN-aJ-edo"/>
                                     <segue destination="fj9-H6-aTo" kind="push" identifier="showActorDetail" id="aJ1-HD-gXC"/>
                                 </connections>
                             </tableViewCell>

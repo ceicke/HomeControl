@@ -10,6 +10,7 @@
 		A20735041BC97E1200CEF141 /* Loxone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20735031BC97E1200CEF141 /* Loxone.swift */; };
 		A21A2C0F1BD6BE350097F24D /* ActorDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A2C0E1BD6BE350097F24D /* ActorDetailController.swift */; };
 		A21A2C121BD6C3EA0097F24D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21A2C101BD6C3EA0097F24D /* Main.storyboard */; };
+		A22207501BFCDD9B0067B97D /* ActorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A222074F1BFCDD9B0067B97D /* ActorCell.swift */; };
 		A22B4FC41BC906730062970C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22B4FC31BC906730062970C /* AppDelegate.swift */; };
 		A22B4FC61BC906730062970C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22B4FC51BC906730062970C /* ViewController.swift */; };
 		A22B4FCB1BC906730062970C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A22B4FCA1BC906730062970C /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 		A20735031BC97E1200CEF141 /* Loxone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loxone.swift; sourceTree = "<group>"; };
 		A21A2C0E1BD6BE350097F24D /* ActorDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorDetailController.swift; sourceTree = "<group>"; };
 		A21A2C111BD6C3EA0097F24D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A222074F1BFCDD9B0067B97D /* ActorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorCell.swift; sourceTree = "<group>"; };
 		A22B4FC01BC906730062970C /* HomeControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A22B4FC31BC906730062970C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A22B4FC51BC906730062970C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				A2954D801BE1174200903087 /* Actor+CoreDataProperties.swift */,
 				A2954D811BE1174200903087 /* Actor.swift */,
 				A21A2C101BD6C3EA0097F24D /* Main.storyboard */,
+				A222074F1BFCDD9B0067B97D /* ActorCell.swift */,
 				A22B4FC31BC906730062970C /* AppDelegate.swift */,
 				A22B4FC51BC906730062970C /* ViewController.swift */,
 				A22B4FCA1BC906730062970C /* Assets.xcassets */,
@@ -343,6 +346,7 @@
 				A26A36121BD13E1A00DA7622 /* SettingController.swift in Sources */,
 				A2954D821BE1174200903087 /* Actor+CoreDataProperties.swift in Sources */,
 				A21A2C0F1BD6BE350097F24D /* ActorDetailController.swift in Sources */,
+				A22207501BFCDD9B0067B97D /* ActorCell.swift in Sources */,
 				A2954D831BE1174200903087 /* Actor.swift in Sources */,
 				A22B4FC61BC906730062970C /* ViewController.swift in Sources */,
 				A26A36151BD1401400DA7622 /* LoxoneConfiguration.xcdatamodeld in Sources */,

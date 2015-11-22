@@ -107,9 +107,11 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
         cellForRowAtIndexPath
         indexPath: NSIndexPath) -> UITableViewCell {
             
-            let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-            
-            self.configureCell(cell, atIndexPath: indexPath)
+//            let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! ActorCell
+            let setting = settings[indexPath.row]
+            cell.configure(setting.valueForKey("name")!.description, status: "Bla")
+//            self.configureCell(cell, atIndexPath: indexPath)
             
             return cell
     }
@@ -149,10 +151,11 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
             self.settings.insert(val, atIndex: destinationIndexPath.row)
     }
     
-    func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
-        let setting = settings[indexPath.row]
-        cell.textLabel!.text = setting.valueForKey("name")!.description
-    }
+//    func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
+//        let setting = settings[indexPath.row]
+//        cell.configure(setting.valueForKey("name")!.description, "Bla")
+////        cell.textLabel!.text = setting.valueForKey("name")!.description
+//    }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
