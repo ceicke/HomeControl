@@ -22,6 +22,15 @@
 		A22B4FE71BC906730062970C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22B4FE61BC906730062970C /* InterfaceController.swift */; };
 		A22B4FE91BC906730062970C /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22B4FE81BC906730062970C /* ExtensionDelegate.swift */; };
 		A22B4FEB1BC906730062970C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A22B4FEA1BC906730062970C /* Assets.xcassets */; };
+		A23AE05E1C0461740093B060 /* NFX.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AE0551C0461740093B060 /* NFX.swift */; };
+		A23AE05F1C0461740093B060 /* NFXBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AE0561C0461740093B060 /* NFXBodyDetailsController.swift */; };
+		A23AE0601C0461740093B060 /* NFXDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AE0571C0461740093B060 /* NFXDetailsController.swift */; };
+		A23AE0611C0461740093B060 /* NFXHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AE0581C0461740093B060 /* NFXHelper.swift */; };
+		A23AE0621C0461740093B060 /* NFXHTTPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AE0591C0461740093B060 /* NFXHTTPModel.swift */; };
+		A23AE0631C0461740093B060 /* NFXHTTPModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AE05A1C0461740093B060 /* NFXHTTPModelManager.swift */; };
+		A23AE0641C0461740093B060 /* NFXListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AE05B1C0461740093B060 /* NFXListCell.swift */; };
+		A23AE0651C0461740093B060 /* NFXListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AE05C1C0461740093B060 /* NFXListController.swift */; };
+		A23AE0661C0461740093B060 /* NFXProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AE05D1C0461740093B060 /* NFXProtocol.swift */; };
 		A26A36121BD13E1A00DA7622 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A36111BD13E1A00DA7622 /* SettingController.swift */; };
 		A26A36151BD1401400DA7622 /* LoxoneConfiguration.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A26A36131BD1401400DA7622 /* LoxoneConfiguration.xcdatamodeld */; };
 		A28A4DC21BFB117E00D84251 /* ServerInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28A4DC11BFB117E00D84251 /* ServerInfoController.swift */; };
@@ -94,6 +103,15 @@
 		A22B4FE81BC906730062970C /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		A22B4FEA1BC906730062970C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A22B4FEC1BC906730062970C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A23AE0551C0461740093B060 /* NFX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFX.swift; sourceTree = "<group>"; };
+		A23AE0561C0461740093B060 /* NFXBodyDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXBodyDetailsController.swift; sourceTree = "<group>"; };
+		A23AE0571C0461740093B060 /* NFXDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXDetailsController.swift; sourceTree = "<group>"; };
+		A23AE0581C0461740093B060 /* NFXHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXHelper.swift; sourceTree = "<group>"; };
+		A23AE0591C0461740093B060 /* NFXHTTPModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXHTTPModel.swift; sourceTree = "<group>"; };
+		A23AE05A1C0461740093B060 /* NFXHTTPModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXHTTPModelManager.swift; sourceTree = "<group>"; };
+		A23AE05B1C0461740093B060 /* NFXListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXListCell.swift; sourceTree = "<group>"; };
+		A23AE05C1C0461740093B060 /* NFXListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXListController.swift; sourceTree = "<group>"; };
+		A23AE05D1C0461740093B060 /* NFXProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXProtocol.swift; sourceTree = "<group>"; };
 		A26A36111BD13E1A00DA7622 /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		A26A36141BD1401400DA7622 /* LoxoneConfiguration.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoxoneConfiguration.xcdatamodel; sourceTree = "<group>"; };
 		A28A4DC11BFB117E00D84251 /* ServerInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerInfoController.swift; sourceTree = "<group>"; };
@@ -147,6 +165,7 @@
 		A22B4FC21BC906730062970C /* HomeControl */ = {
 			isa = PBXGroup;
 			children = (
+				A23AE0541C0461740093B060 /* nfx */,
 				A2954D801BE1174200903087 /* Actor+CoreDataProperties.swift */,
 				A2954D811BE1174200903087 /* Actor.swift */,
 				A21A2C101BD6C3EA0097F24D /* Main.storyboard */,
@@ -186,6 +205,22 @@
 				A2A408DD1BEA048800F568D0 /* ActorRowController.swift */,
 			);
 			path = "HomeControl WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		A23AE0541C0461740093B060 /* nfx */ = {
+			isa = PBXGroup;
+			children = (
+				A23AE0551C0461740093B060 /* NFX.swift */,
+				A23AE0561C0461740093B060 /* NFXBodyDetailsController.swift */,
+				A23AE0571C0461740093B060 /* NFXDetailsController.swift */,
+				A23AE0581C0461740093B060 /* NFXHelper.swift */,
+				A23AE0591C0461740093B060 /* NFXHTTPModel.swift */,
+				A23AE05A1C0461740093B060 /* NFXHTTPModelManager.swift */,
+				A23AE05B1C0461740093B060 /* NFXListCell.swift */,
+				A23AE05C1C0461740093B060 /* NFXListController.swift */,
+				A23AE05D1C0461740093B060 /* NFXProtocol.swift */,
+			);
+			path = nfx;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,14 +378,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A23AE0641C0461740093B060 /* NFXListCell.swift in Sources */,
 				A26A36121BD13E1A00DA7622 /* SettingController.swift in Sources */,
 				A2954D821BE1174200903087 /* Actor+CoreDataProperties.swift in Sources */,
 				A21A2C0F1BD6BE350097F24D /* ActorDetailController.swift in Sources */,
 				A22207501BFCDD9B0067B97D /* ActorCell.swift in Sources */,
 				A2954D831BE1174200903087 /* Actor.swift in Sources */,
+				A23AE05E1C0461740093B060 /* NFX.swift in Sources */,
+				A23AE0611C0461740093B060 /* NFXHelper.swift in Sources */,
 				A22B4FC61BC906730062970C /* ViewController.swift in Sources */,
 				A26A36151BD1401400DA7622 /* LoxoneConfiguration.xcdatamodeld in Sources */,
+				A23AE0661C0461740093B060 /* NFXProtocol.swift in Sources */,
 				A22B4FC41BC906730062970C /* AppDelegate.swift in Sources */,
+				A23AE0631C0461740093B060 /* NFXHTTPModelManager.swift in Sources */,
+				A23AE0601C0461740093B060 /* NFXDetailsController.swift in Sources */,
+				A23AE05F1C0461740093B060 /* NFXBodyDetailsController.swift in Sources */,
+				A23AE0651C0461740093B060 /* NFXListController.swift in Sources */,
+				A23AE0621C0461740093B060 /* NFXHTTPModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,6 +617,7 @@
 				INFOPLIST_FILE = HomeControl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = org.geisterstunde.HomeControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -588,6 +633,7 @@
 				INFOPLIST_FILE = HomeControl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = org.geisterstunde.HomeControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
