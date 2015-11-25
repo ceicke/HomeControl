@@ -116,7 +116,7 @@ class ViewController: UIViewController, WCSessionDelegate {
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    func serverDataEntered()-> Bool {
+    func serverDataEntered() -> Bool {
         if NSUserDefaults.standardUserDefaults().objectForKey("serverUrl") == nil || NSUserDefaults.standardUserDefaults().objectForKey("username") == nil || NSUserDefaults.standardUserDefaults().objectForKey("password") == nil {
             return false
         } else {

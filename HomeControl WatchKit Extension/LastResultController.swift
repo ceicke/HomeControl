@@ -18,11 +18,30 @@ class LastResultController: WKInterfaceController, NSXMLParserDelegate {
     override func willActivate() {
         super.willActivate()
         
-        let lastStatusCode:Int = NSUserDefaults.standardUserDefaults().valueForKey("lastStatusCode") as! Int
-        let lastStatusCodeDate:NSDate = NSUserDefaults.standardUserDefaults().valueForKey("lastStatusCodeDate") as! NSDate
+        var lastStatusCode:Int
+        var lastStatusCodeDate:NSDate
+        var lastActor:String
+        
+        if NSUserDefaults.standardUserDefaults().objectForKey("lastStatusCode") == nil {
+            lastStatusCode = -1
+        } else {
+            lastStatusCode = NSUserDefaults.standardUserDefaults().valueForKey("lastStatusCode") as! Int
+        }
+        
+        if NSUserDefaults.standardUserDefaults().objectForKey("lastStatusCodeDate") == nil {
+            lastStatusCodeDate = NSDate()
+        } else {
+            lastStatusCodeDate = NSUserDefaults.standardUserDefaults().valueForKey("lastStatusCodeDate") as! NSDate
+        }
+        
+        if NSUserDefaults.standardUserDefaults().objectForKey("lastActor") == nil {
+            lastActor = "Noch nichts gesendet"
+        } else {
+            lastActor = (NSUserDefaults.standardUserDefaults().valueForKey("lastActor") as? String)!
+        }
         
         lastResultLabel.setText(String(lastStatusCode))
-        lastReusultActorLabel.setText(NSUserDefaults.standardUserDefaults().valueForKey("lastActor") as? String)
+        lastReusultActorLabel.setText(lastActor)
         
         let lastStatusCodeDateString = NSDateFormatter.localizedStringFromDate(lastStatusCodeDate, dateStyle: .ShortStyle, timeStyle: .ShortStyle)
         lastResultDateTimeLabel.setText(lastStatusCodeDateString)

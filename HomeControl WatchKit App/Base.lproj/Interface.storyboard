@@ -29,11 +29,6 @@
                     </items>
                     <menu key="menu" id="dWT-3s-PpS">
                         <items>
-                            <menuItem title="Server Info" icon="info" id="PpW-oo-EYe">
-                                <connections>
-                                    <action selector="infoPressed" destination="AgC-eL-Hgc" id="MNM-So-Xel"/>
-                                </connections>
-                            </menuItem>
                             <menuItem title="Letzte Antwort" icon="more" id="WWA-Wa-4Nn">
                                 <connections>
                                     <action selector="lastResultPressed" destination="AgC-eL-Hgc" id="Tl6-WN-qKh"/>
@@ -78,28 +73,6 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="375" y="69"/>
-        </scene>
-        <!--ServerInfo-->
-        <scene sceneID="BA2-Os-ShY">
-            <objects>
-                <controller identifier="ServerInfo" id="aWg-uy-cSt" customClass="ServerInfoController" customModule="HomeControl_WatchKit_Extension">
-                    <items>
-                        <label alignment="left" text="Name" id="vgz-NQ-cNI">
-                            <color key="textColor" red="0.0039215686269999999" green="0.52549019610000003" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
-                        </label>
-                        <label alignment="left" text="LabelName" id="uWa-dU-MRl"/>
-                        <label alignment="left" text="Version" id="Ucw-1o-dtT">
-                            <color key="textColor" red="0.0039215686269999999" green="0.52549019610000003" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
-                        </label>
-                        <label alignment="left" text="LabelVersion" id="w2R-Fw-qlN"/>
-                    </items>
-                    <connections>
-                        <outlet property="labelName" destination="uWa-dU-MRl" id="VPs-8a-WN2"/>
-                        <outlet property="labelVersion" destination="w2R-Fw-qlN" id="eVD-W3-E0d"/>
-                    </connections>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="148" y="-247"/>
         </scene>
         <!--LastResult-->
         <scene sceneID="o8Z-Jr-pnV">

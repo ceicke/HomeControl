@@ -33,7 +33,6 @@
 		A23AE0661C0461740093B060 /* NFXProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AE05D1C0461740093B060 /* NFXProtocol.swift */; };
 		A26A36121BD13E1A00DA7622 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A36111BD13E1A00DA7622 /* SettingController.swift */; };
 		A26A36151BD1401400DA7622 /* LoxoneConfiguration.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A26A36131BD1401400DA7622 /* LoxoneConfiguration.xcdatamodeld */; };
-		A28A4DC21BFB117E00D84251 /* ServerInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28A4DC11BFB117E00D84251 /* ServerInfoController.swift */; };
 		A2954D821BE1174200903087 /* Actor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2954D801BE1174200903087 /* Actor+CoreDataProperties.swift */; };
 		A2954D831BE1174200903087 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2954D811BE1174200903087 /* Actor.swift */; };
 		A2A408DE1BEA048800F568D0 /* ActorRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A408DD1BEA048800F568D0 /* ActorRowController.swift */; };
@@ -115,7 +114,6 @@
 		A23AE05D1C0461740093B060 /* NFXProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXProtocol.swift; sourceTree = "<group>"; };
 		A26A36111BD13E1A00DA7622 /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		A26A36141BD1401400DA7622 /* LoxoneConfiguration.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoxoneConfiguration.xcdatamodel; sourceTree = "<group>"; };
-		A28A4DC11BFB117E00D84251 /* ServerInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerInfoController.swift; sourceTree = "<group>"; };
 		A2954D801BE1174200903087 /* Actor+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Actor+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A2954D811BE1174200903087 /* Actor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
 		A2A408DD1BEA048800F568D0 /* ActorRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorRowController.swift; sourceTree = "<group>"; };
@@ -198,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				A2EB7A771BFB6DA4007DCA77 /* LastResultController.swift */,
-				A28A4DC11BFB117E00D84251 /* ServerInfoController.swift */,
 				A22B4FE61BC906730062970C /* InterfaceController.swift */,
 				A22B4FE81BC906730062970C /* ExtensionDelegate.swift */,
 				A22B4FEA1BC906730062970C /* Assets.xcassets */,
@@ -411,7 +408,6 @@
 				A2EB7A781BFB6DA4007DCA77 /* LastResultController.swift in Sources */,
 				A2DFD8291BE271B800D1DF88 /* ActorController.swift in Sources */,
 				A22B4FE91BC906730062970C /* ExtensionDelegate.swift in Sources */,
-				A28A4DC21BFB117E00D84251 /* ServerInfoController.swift in Sources */,
 				A22B4FE71BC906730062970C /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
