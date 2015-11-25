@@ -12,12 +12,9 @@ import UIKit
 class ActorCell: UITableViewCell {
     
     @IBOutlet weak var actorName: UILabel!
-    @IBOutlet weak var actorStatus: UILabel!
     
-    func configure(name: String?, status: String?) {
-        
+    func configure(name: String?) {
         actorName.text = name
-        actorStatus.text = status
-        
     }
+    
 }

@@ -37,6 +37,7 @@
 		A2954D821BE1174200903087 /* Actor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2954D801BE1174200903087 /* Actor+CoreDataProperties.swift */; };
 		A2954D831BE1174200903087 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2954D811BE1174200903087 /* Actor.swift */; };
 		A2A408DE1BEA048800F568D0 /* ActorRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A408DD1BEA048800F568D0 /* ActorRowController.swift */; };
+		A2AEDC661C06071F006ED2FE /* Loxone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEDC651C06071F006ED2FE /* Loxone.swift */; };
 		A2DFD8291BE271B800D1DF88 /* ActorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DFD8281BE271B800D1DF88 /* ActorController.swift */; };
 		A2EB7A781BFB6DA4007DCA77 /* LastResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EB7A771BFB6DA4007DCA77 /* LastResultController.swift */; };
 /* End PBXBuildFile section */
@@ -84,7 +85,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A20735031BC97E1200CEF141 /* Loxone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loxone.swift; sourceTree = "<group>"; };
+		A20735031BC97E1200CEF141 /* Loxone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Loxone.swift; path = "HomeControl WatchKit Extension/Loxone.swift"; sourceTree = SOURCE_ROOT; };
 		A21A2C0E1BD6BE350097F24D /* ActorDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorDetailController.swift; sourceTree = "<group>"; };
 		A21A2C111BD6C3EA0097F24D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A222074F1BFCDD9B0067B97D /* ActorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorCell.swift; sourceTree = "<group>"; };
@@ -118,6 +119,7 @@
 		A2954D801BE1174200903087 /* Actor+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Actor+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A2954D811BE1174200903087 /* Actor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
 		A2A408DD1BEA048800F568D0 /* ActorRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorRowController.swift; sourceTree = "<group>"; };
+		A2AEDC651C06071F006ED2FE /* Loxone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loxone.swift; sourceTree = "<group>"; };
 		A2AFB3141BE916560021E993 /* LoxoneConfigurationWithOrdering.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoxoneConfigurationWithOrdering.xcdatamodel; sourceTree = "<group>"; };
 		A2DFD8281BE271B800D1DF88 /* ActorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorController.swift; sourceTree = "<group>"; };
 		A2EB7A771BFB6DA4007DCA77 /* LastResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastResultController.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				A22B4FCF1BC906730062970C /* Info.plist */,
 				A26A36111BD13E1A00DA7622 /* SettingController.swift */,
 				A21A2C0E1BD6BE350097F24D /* ActorDetailController.swift */,
+				A2AEDC651C06071F006ED2FE /* Loxone.swift */,
 			);
 			path = HomeControl;
 			sourceTree = "<group>";
@@ -200,8 +203,8 @@
 				A22B4FE81BC906730062970C /* ExtensionDelegate.swift */,
 				A22B4FEA1BC906730062970C /* Assets.xcassets */,
 				A22B4FEC1BC906730062970C /* Info.plist */,
-				A20735031BC97E1200CEF141 /* Loxone.swift */,
 				A2DFD8281BE271B800D1DF88 /* ActorController.swift */,
+				A20735031BC97E1200CEF141 /* Loxone.swift */,
 				A2A408DD1BEA048800F568D0 /* ActorRowController.swift */,
 			);
 			path = "HomeControl WatchKit Extension";
@@ -390,6 +393,7 @@
 				A26A36151BD1401400DA7622 /* LoxoneConfiguration.xcdatamodeld in Sources */,
 				A23AE0661C0461740093B060 /* NFXProtocol.swift in Sources */,
 				A22B4FC41BC906730062970C /* AppDelegate.swift in Sources */,
+				A2AEDC661C06071F006ED2FE /* Loxone.swift in Sources */,
 				A23AE0631C0461740093B060 /* NFXHTTPModelManager.swift in Sources */,
 				A23AE0601C0461740093B060 /* NFXDetailsController.swift in Sources */,
 				A23AE05F1C0461740093B060 /* NFXBodyDetailsController.swift in Sources */,

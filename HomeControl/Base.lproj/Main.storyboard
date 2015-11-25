@@ -63,7 +63,7 @@
                                 <animations/>
                                 <state key="normal" title="Aktoren"/>
                                 <connections>
-                                    <segue destination="q49-Nb-HyH" kind="push" id="vfd-3e-ZIS"/>
+                                    <segue destination="q49-Nb-HyH" kind="push" identifier="" id="vfd-3e-ZIS"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -93,22 +93,14 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U31-9b-aiE" id="ODO-a3-cDC">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ixi-HJ-hZH">
-                                            <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="270" height="44"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gc2-4E-grj">
-                                            <rect key="frame" x="242" y="12" width="45" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -118,7 +110,6 @@
                                 <animations/>
                                 <connections>
                                     <outlet property="actorName" destination="Ixi-HJ-hZH" id="ybu-pj-hRX"/>
-                                    <outlet property="actorStatus" destination="gc2-4E-grj" id="9RN-aJ-edo"/>
                                     <segue destination="fj9-H6-aTo" kind="push" identifier="showActorDetail" id="aJ1-HD-gXC"/>
                                 </connections>
                             </tableViewCell>
@@ -171,6 +162,9 @@
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="URL"/>
+                                <connections>
+                                    <action selector="uuidChanged:" destination="fj9-H6-aTo" eventType="editingDidBegin" id="7zX-2Y-yUl"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Szene" textAlignment="natural" minimumFontSize="17" id="4m5-0q-0md">
                                 <rect key="frame" x="20" y="184" width="280" height="30"/>
@@ -178,11 +172,17 @@
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="sceneChanged:" destination="fj9-H6-aTo" eventType="editingDidBegin" id="OQt-bR-PaN"/>
+                                </connections>
                             </textField>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="qhP-y4-MKg">
                                 <rect key="frame" x="175" y="222" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
+                                <connections>
+                                    <action selector="dimmableChanged:" destination="fj9-H6-aTo" eventType="valueChanged" id="y6e-yf-GeF"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dimmbar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NcC-R4-KAN">
                                 <rect key="frame" x="97" y="227" width="70" height="21"/>
@@ -201,6 +201,53 @@
                                     <action selector="saveActor:" destination="fj9-H6-aTo" eventType="touchUpInside" id="fBg-9r-nN5"/>
                                 </connections>
                             </button>
+                            <view opaque="NO" contentMode="scaleToFill" id="CPx-6D-pwv">
+                                <rect key="frame" x="0.0" y="307" width="320" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yb9-Fe-ZBz">
+                                        <rect key="frame" x="32" y="43" width="54" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.0039215686269999999" green="0.52549019610000003" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Aus"/>
+                                        <connections>
+                                            <action selector="testOffPressed:" destination="fj9-H6-aTo" eventType="touchUpInside" id="lWZ-01-Fcj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vcC-TV-bPI">
+                                        <rect key="frame" x="234" y="43" width="54" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.0039215686269999999" green="0.52549019610000003" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="An"/>
+                                        <connections>
+                                            <action selector="testOnPressed:" destination="fj9-H6-aTo" eventType="touchUpInside" id="0Sj-Xf-IOU"/>
+                                        </connections>
+                                    </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" continuous="NO" id="UUl-Sb-Gxu">
+                                        <rect key="frame" x="101" y="43" width="118" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                        <connections>
+                                            <action selector="testDimmerTouched:" destination="fj9-H6-aTo" eventType="valueChanged" id="Sov-Lg-Pha"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Khz-lb-7N1">
+                                        <rect key="frame" x="144" y="8" width="33" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0039215686269999999" green="0.52549019610000003" blue="0.45882352939999999" alpha="0.10150862068965517" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -211,6 +258,8 @@
                         <outlet property="actorName" destination="uoP-qS-b15" id="QpP-Jd-R9h"/>
                         <outlet property="actorScene" destination="4m5-0q-0md" id="AAJ-b9-Syi"/>
                         <outlet property="actorUUID" destination="2Wh-gh-UiX" id="Zd0-3H-iEn"/>
+                        <outlet property="testArea" destination="CPx-6D-pwv" id="bae-aM-mpb"/>
+                        <outlet property="testDimmer" destination="UUl-Sb-Gxu" id="WY0-GE-TRl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bj8-cK-hlq" userLabel="First Responder" sceneMemberID="firstResponder"/>

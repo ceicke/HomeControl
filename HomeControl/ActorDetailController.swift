@@ -19,16 +19,21 @@ class ActorDetailController: UIViewController {
     @IBOutlet weak var actorScene: UITextField!
     @IBOutlet weak var actorDimmable: UISwitch!
     
+    @IBOutlet weak var testArea: UIView!
+    @IBOutlet weak var testDimmer: UISlider!
+    
+    let loxone = Loxone()
+    
     @IBAction func saveActor(sender: UIButton) {
         actor?.setValue(actorName.text, forKey: "name")
         actor?.setValue(actorUUID.text, forKey: "uuid")
         actor?.setValue(actorScene.text, forKey: "scene")
         actor?.setValue(actorDimmable.on, forKey: "dimmable")
         
-        if (!isUUIDvalid((actor?.uuid)!)) {
-            let alertController = UIAlertController(title: "Fehler", message: "Die eingegebene UUID hat das falsche Format.", preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
-            self.presentViewController(alertController, animated: true, completion: nil)
+        testDimmer.hidden = !actorDimmable.on
+        
+        if (!isUUIDFormatvalid((actor?.uuid)!)) {
+            presentError("Fehler", message: "Die eingegebene UUID hat das falsche Format.")
             return
         }
         
@@ -36,10 +41,12 @@ class ActorDetailController: UIViewController {
             try managedObjectContext!.save()
         } catch let error as NSError {
             NSLog("Could not save the actor. Error: \(error)")
+            presentError("Fehler", message: "Der Aktor konnte nicht gespeichert werden: \(error)")
+            return
         }
         
-        if let navController = self.navigationController {
-            navController.popViewControllerAnimated(true)
+        if serverDataEntered((actor?.uuid)!) {
+            testArea.hidden = false
         }
     }
     
@@ -56,6 +63,7 @@ class ActorDetailController: UIViewController {
         if let dimmable = actor!.dimmable {
             actorDimmable.setOn(Bool(dimmable), animated: true)
         }
+        testArea.hidden = false
     }
     
     override func viewDidLoad() {
@@ -63,13 +71,64 @@ class ActorDetailController: UIViewController {
         self.configureView()
     }
     
-    func isUUIDvalid(uuid: String)-> Bool {
+    func isUUIDFormatvalid(uuid: String)-> Bool {
         
-        let regex = try! NSRegularExpression(pattern: "^[0-9a-f]{8}-[0-9]{4}-[0-9a-f]{4}-[0-9a-f]{16}$", options: [.CaseInsensitive])
-        let textString = uuid as NSString
-        let matches = regex.matchesInString(uuid, options: [], range: NSMakeRange(0, textString.length))
+        if actorUUID.text!.isEmpty {
+            return false
+        } else {
+            let regex = try! NSRegularExpression(pattern: "^[0-9a-f]{8}-[0-9]{4}-[0-9a-f]{4}-[0-9a-f]{16}$", options: [.CaseInsensitive])
+            let textString = uuid as NSString
+            let matches = regex.matchesInString(uuid, options: [], range: NSMakeRange(0, textString.length))
         
-        return matches.count > 0
+            return matches.count > 0
+        }
+    }
+    
+    func serverDataEntered(uuid: String)-> Bool {
+        
+        if NSUserDefaults.standardUserDefaults().objectForKey("serverUrl") == nil || NSUserDefaults.standardUserDefaults().objectForKey("username") == nil || NSUserDefaults.standardUserDefaults().objectForKey("password") == nil {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    @IBAction func uuidChanged(sender: AnyObject) {
+        testArea.hidden = true
+    }
+    @IBAction func sceneChanged(sender: AnyObject) {
+        testArea.hidden = true
+    }
+    @IBAction func dimmableChanged(sender: AnyObject) {
+        testArea.hidden = true
+    }
+    
+    @IBAction func testOffPressed(sender: AnyObject) {
+        testDimmer.value = 0
+        if !actorDimmable.on {
+            loxone.tellLoxone(actorName.text!, uuid:actorUUID.text!, onOff: "off", scene: actorScene.text!)
+        } else {
+            loxone.tellLoxone(actorName.text!, uuid:actorUUID.text!, onOff: "off", scene: actorScene.text!, dimmValue: 0)
+        }
+    }
+    
+    @IBAction func testOnPressed(sender: AnyObject) {
+        testDimmer.value = 100
+        if !actorDimmable.on {
+            loxone.tellLoxone(actorName.text!, uuid:actorUUID.text!, onOff: "on", scene: actorScene.text!)
+        } else {
+            loxone.tellLoxone(actorName.text!, uuid:actorUUID.text!, onOff: "on", scene: actorScene.text!, dimmValue: 100)
+        }
+    }
+    
+    @IBAction func testDimmerTouched(dimmer: UISlider) {
+        loxone.tellLoxone(actorName.text!, uuid:actorUUID.text!, onOff: "on", scene: actorScene.text!, dimmValue: Int(dimmer.value))
+    }
+    
+    func presentError(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
 
 }
