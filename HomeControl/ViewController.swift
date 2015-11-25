@@ -5,13 +5,6 @@
 //  Created by Christoph Eicke on 10.10.15.
 //  Copyright © 2015 Christoph Eicke. All rights reserved.
 //
-
-//
-// TODO
-// - refactor the sending of values
-// - test of all actors that were entered and mark actors as "broken" that do not respond with 200
-//
-
 import UIKit
 import WatchConnectivity
 import CoreData
