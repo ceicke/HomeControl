@@ -47,6 +47,10 @@ class ActorDetailController: UIViewController {
         
         if serverDataEntered((actor?.uuid)!) {
             testArea.hidden = false
+        } else {
+            if let navController = self.navigationController {
+                navController.popViewControllerAnimated(true)
+            }
         }
     }
     
@@ -63,7 +67,7 @@ class ActorDetailController: UIViewController {
         if let dimmable = actor!.dimmable {
             actorDimmable.setOn(Bool(dimmable), animated: true)
         }
-        testArea.hidden = false
+        testArea.hidden = true
     }
     
     override func viewDidLoad() {
@@ -85,7 +89,6 @@ class ActorDetailController: UIViewController {
     }
     
     func serverDataEntered(uuid: String)-> Bool {
-        
         if NSUserDefaults.standardUserDefaults().objectForKey("serverUrl") == nil || NSUserDefaults.standardUserDefaults().objectForKey("username") == nil || NSUserDefaults.standardUserDefaults().objectForKey("password") == nil {
             return false
         } else {
