@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WatchKit
 
 class Loxone {
     
@@ -42,6 +43,7 @@ class Loxone {
                     NSUserDefaults.standardUserDefaults().synchronize()
 
                     if httpResponse.statusCode != 200 {
+                        WKInterfaceDevice().playHaptic(.Failure)
                         NSLog("ERROR \(httpResponse.statusCode)")
                     }
                 }
