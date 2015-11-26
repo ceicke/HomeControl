@@ -108,7 +108,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                 
         } else {
             title = "Fehler"
-            message = "AppleWatch nicht in Reichweite."
+            message = "Bitte LoxHomeControl auf der AppleWatch öffnen."
         }
             
         let alertController = UIAlertController(title: title as String, message: message as String, preferredStyle: UIAlertControllerStyle.Alert)

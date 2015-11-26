@@ -47,4 +47,5 @@ class Loxone {
             task.resume()
         }
     }
+
 }
