@@ -33,7 +33,7 @@ class ActorDetailController: UIViewController {
         testDimmer.hidden = !actorDimmable.on
         
         if (!isUUIDFormatvalid((actor?.uuid)!)) {
-            presentError("Fehler", message: "Die eingegebene UUID hat das falsche Format.")
+            presentError(NSLocalizedString("ERROR", comment: "Fehler"), message: NSLocalizedString("WRONG_UUID_FORMAT", comment: "Die eingegebene UUID hat das falsche Format."))
             return
         }
         
@@ -41,7 +41,7 @@ class ActorDetailController: UIViewController {
             try managedObjectContext!.save()
         } catch let error as NSError {
             NSLog("Could not save the actor. Error: \(error)")
-            presentError("Fehler", message: "Der Aktor konnte nicht gespeichert werden: \(error)")
+            presentError(NSLocalizedString("ERROR", comment: "Fehler"), message: NSLocalizedString("ACTOR_COULD_NOT_BE_SAVED", comment: "Der Aktor konnte nicht gespeichert werden."))
             return
         }
         
@@ -130,7 +130,7 @@ class ActorDetailController: UIViewController {
     
     func presentError(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: UIAlertActionStyle.Default,handler: nil))
         self.presentViewController(alertController, animated: true, completion: nil)
     }
 

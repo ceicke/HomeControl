@@ -6,22 +6,22 @@
 "JWJ-fa-U8w.text" = "LastActor";
 
 /* Class = "WKInterfaceLabel"; text = "Bitte öffne auf dem iPhone die HomeControl App und schicke die Aktoren und Benutzername/Passwort/IP des Miniservers an deine AppleWatch."; ObjectID = "Ozu-tD-nNN"; */
-"Ozu-tD-nNN.text" = "Bitte öffne auf dem iPhone die HomeControl App und schicke die Aktoren und Benutzername/Passwort/IP des Miniservers an deine AppleWatch.";
+"Ozu-tD-nNN.text" = "Please open the HomeControl app on your iPhone and send the actors and username/password/miniserver IP to the AppleWatch.";
 
 /* Class = "WKInterfaceLabel"; text = "Keine Konfiguration"; ObjectID = "RUa-Dr-aj1"; */
-"RUa-Dr-aj1.text" = "Keine Konfiguration";
+"RUa-Dr-aj1.text" = "No Configuration";
 
 /* Class = "WKInterfaceLabel"; text = "Aktor"; ObjectID = "UKi-iz-Da7"; */
-"UKi-iz-Da7.text" = "Aktor";
+"UKi-iz-Da7.text" = "Actor";
 
 /* Class = "WKInterfaceMenuItem"; title = "Letzte Antwort"; ObjectID = "WWA-Wa-4Nn"; */
-"WWA-Wa-4Nn.title" = "Letzte Antwort";
+"WWA-Wa-4Nn.title" = "Last response";
 
 /* Class = "WKInterfaceLabel"; text = "LastResult"; ObjectID = "fY1-ts-Ovz"; */
 "fY1-ts-Ovz.text" = "LastResult";
 
 /* Class = "WKInterfaceButton"; title = "Aus"; ObjectID = "hgi-nX-kwR"; */
-"hgi-nX-kwR.title" = "Aus";
+"hgi-nX-kwR.title" = "Off";
 
 /* Class = "WKInterfaceLabel"; text = "LastResultDateTime"; ObjectID = "i9b-FR-sks"; */
 "i9b-FR-sks.text" = "LastResultDateTime";
@@ -30,7 +30,7 @@
 "lFq-5C-Xhf.text" = "HTTP Status";
 
 /* Class = "WKInterfaceButton"; title = "An"; ObjectID = "uaj-Jp-ktK"; */
-"uaj-Jp-ktK.title" = "An";
+"uaj-Jp-ktK.title" = "On";
 
 /* Class = "WKInterfaceLabel"; text = "Uhrzeit"; ObjectID = "uco-Ul-C9W"; */
-"uco-Ul-C9W.text" = "Uhrzeit";
+"uco-Ul-C9W.text" = "Time";

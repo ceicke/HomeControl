@@ -51,7 +51,7 @@ class ViewController: UIViewController, WCSessionDelegate {
     
     @IBAction func saveValues(sender: UIButton) {
         if loxoneServerUrl.text!.isEmpty || loxoneUsername.text!.isEmpty || loxonePassword.text!.isEmpty {
-            let alertController = UIAlertController(title: "Fehler", message: "Bitte Benutzername, Passwort und lokale IP des Miniservers eintragen", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertController = UIAlertController(title: NSLocalizedString("ERROR", comment: "Fehler"), message: NSLocalizedString("ENTER_BASIC_DATA", comment: "Bitte Benutzername, Passwort und lokale IP des Miniservers eintragen"), preferredStyle: UIAlertControllerStyle.Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
             self.presentViewController(alertController, animated: true, completion: nil)
             sendToWatchButton.hidden = true
@@ -69,14 +69,14 @@ class ViewController: UIViewController, WCSessionDelegate {
 
         let configurationData = ["serverUrl":String(loxoneServerUrl.text!), "username":String(loxoneUsername.text!), "password":String(loxonePassword.text!)]
             
-        var title:NSString = "Alles klar"
-        var message:NSString = "Die AppleWatch hat die Daten empfangen."
+        var title:NSString = NSLocalizedString("ALLES_KLAR", comment: "Alles klar")
+        var message:NSString = NSLocalizedString("APPLE_WATCH_RECEIVED_DATA", comment: "Die AppleWatch hat die Daten empfangen.")
             
         if (WCSession.defaultSession().reachable) {
             session.sendMessage(configurationData, replyHandler: {(reply: [String : AnyObject]) -> Void in
                 }, errorHandler: {(error ) -> Void in
-                    title = "Fehler"
-                    message = "Fehler bei der Kommunikation mit der Apple Watch."
+                    title = NSLocalizedString("ERROR", comment: "Fehler")
+                    message = NSLocalizedString("ERROR_COMMUNICATING_WITH_WATCH", comment: "Fehler bei der Kommunikation mit der Apple Watch.")
             })
 
             var actorData = Dictionary<String, String>()
@@ -107,8 +107,8 @@ class ViewController: UIViewController, WCSessionDelegate {
             try! session.updateApplicationContext(["appData" : actorData])
                 
         } else {
-            title = "Fehler"
-            message = "Bitte LoxHomeControl auf der AppleWatch öffnen."
+            title = NSLocalizedString("ERROR", comment: "Fehler")
+            message = NSLocalizedString("PLEASE_OPEN_LOXHOMECONTROL_ON_WATCH", comment: "Bitte LoxHomeControl auf der AppleWatch öffnen.")
         }
             
         let alertController = UIAlertController(title: title as String, message: message as String, preferredStyle: UIAlertControllerStyle.Alert)

@@ -3,10 +3,10 @@
 "2Wh-gh-UiX.placeholder" = "UUID";
 
 /* Class = "UITextField"; placeholder = "Szene"; ObjectID = "4m5-0q-0md"; */
-"4m5-0q-0md.placeholder" = "Szene";
+"4m5-0q-0md.placeholder" = "Scene";
 
 /* Class = "UITextField"; placeholder = "Benutzername"; ObjectID = "6I2-Cz-lhj"; */
-"6I2-Cz-lhj.placeholder" = "Benutzername";
+"6I2-Cz-lhj.placeholder" = "Username";
 
 /* Class = "UITextField"; placeholder = "Miniserver IP"; ObjectID = "9oD-fc-Kw0"; */
 "9oD-fc-Kw0.placeholder" = "Miniserver IP";
@@ -18,34 +18,34 @@
 "Khz-lb-7N1.text" = "Test";
 
 /* Class = "UILabel"; text = "Dimmbar"; ObjectID = "NcC-R4-KAN"; */
-"NcC-R4-KAN.text" = "Dimmbar";
+"NcC-R4-KAN.text" = "Dimmable";
 
 /* Class = "UIButton"; normalTitle = "An AppleWatch senden"; ObjectID = "Svq-WW-vHE"; */
-"Svq-WW-vHE.normalTitle" = "An AppleWatch senden";
+"Svq-WW-vHE.normalTitle" = "Send to AppleWatch";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "cLR-6w-cai"; */
 "cLR-6w-cai.placeholder" = "Password";
 
 /* Class = "UIButton"; normalTitle = "Speichern"; ObjectID = "eRB-e8-SV7"; */
-"eRB-e8-SV7.normalTitle" = "Speichern";
+"eRB-e8-SV7.normalTitle" = "Save";
 
 /* Class = "UIButton"; normalTitle = "Speichern"; ObjectID = "krA-15-FF1"; */
-"krA-15-FF1.normalTitle" = "Speichern";
+"krA-15-FF1.normalTitle" = "Save";
 
 /* Class = "UILabel"; text = "Loxone Server Konfiguration"; ObjectID = "lAF-1t-iVl"; */
-"lAF-1t-iVl.text" = "Loxone Server Konfiguration";
+"lAF-1t-iVl.text" = "Loxone Server Configuration";
 
 /* Class = "UIButton"; normalTitle = "Aktoren"; ObjectID = "ncL-M2-Nx6"; */
-"ncL-M2-Nx6.normalTitle" = "Aktoren";
+"ncL-M2-Nx6.normalTitle" = "Actors";
 
 /* Class = "UIBarButtonItem"; title = "Bearbeiten"; ObjectID = "tXh-4U-J2p"; */
-"tXh-4U-J2p.title" = "Bearbeiten";
+"tXh-4U-J2p.title" = "Edit";
 
 /* Class = "UITextField"; placeholder = "Aktor Name"; ObjectID = "uoP-qS-b15"; */
-"uoP-qS-b15.placeholder" = "Aktor Name";
+"uoP-qS-b15.placeholder" = "Actor Name";
 
 /* Class = "UIButton"; normalTitle = "An"; ObjectID = "vcC-TV-bPI"; */
-"vcC-TV-bPI.normalTitle" = "An";
+"vcC-TV-bPI.normalTitle" = "On";
 
 /* Class = "UIButton"; normalTitle = "Aus"; ObjectID = "yb9-Fe-ZBz"; */
-"yb9-Fe-ZBz.normalTitle" = "Aus";
+"yb9-Fe-ZBz.normalTitle" = "Off";

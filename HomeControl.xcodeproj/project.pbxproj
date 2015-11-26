@@ -37,6 +37,8 @@
 		A2954D831BE1174200903087 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2954D811BE1174200903087 /* Actor.swift */; };
 		A2A408DE1BEA048800F568D0 /* ActorRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A408DD1BEA048800F568D0 /* ActorRowController.swift */; };
 		A2AEDC661C06071F006ED2FE /* Loxone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEDC651C06071F006ED2FE /* Loxone.swift */; };
+		A2BAE54E1C076854000793D9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2BAE5501C076854000793D9 /* Localizable.strings */; };
+		A2BAE5541C076CD6000793D9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2BAE5561C076CD6000793D9 /* Localizable.strings */; };
 		A2DFD8291BE271B800D1DF88 /* ActorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DFD8281BE271B800D1DF88 /* ActorController.swift */; };
 		A2EB7A781BFB6DA4007DCA77 /* LastResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EB7A771BFB6DA4007DCA77 /* LastResultController.swift */; };
 /* End PBXBuildFile section */
@@ -119,6 +121,13 @@
 		A2A408DD1BEA048800F568D0 /* ActorRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorRowController.swift; sourceTree = "<group>"; };
 		A2AEDC651C06071F006ED2FE /* Loxone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loxone.swift; sourceTree = "<group>"; };
 		A2AFB3141BE916560021E993 /* LoxoneConfigurationWithOrdering.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoxoneConfigurationWithOrdering.xcdatamodel; sourceTree = "<group>"; };
+		A2BAE5491C0766D1000793D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		A2BAE54A1C0766D2000793D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A2BAE54B1C0766D2000793D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Interface.strings; sourceTree = "<group>"; };
+		A2BAE54F1C076854000793D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2BAE5511C07685D000793D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2BAE5551C076CD6000793D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2BAE5571C076CD7000793D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A2DFD8281BE271B800D1DF88 /* ActorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorController.swift; sourceTree = "<group>"; };
 		A2EB7A771BFB6DA4007DCA77 /* LastResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +187,7 @@
 				A26A36111BD13E1A00DA7622 /* SettingController.swift */,
 				A21A2C0E1BD6BE350097F24D /* ActorDetailController.swift */,
 				A2AEDC651C06071F006ED2FE /* Loxone.swift */,
+				A2BAE5501C076854000793D9 /* Localizable.strings */,
 			);
 			path = HomeControl;
 			sourceTree = "<group>";
@@ -203,6 +213,7 @@
 				A2DFD8281BE271B800D1DF88 /* ActorController.swift */,
 				A20735031BC97E1200CEF141 /* Loxone.swift */,
 				A2A408DD1BEA048800F568D0 /* ActorRowController.swift */,
+				A2BAE5561C076CD6000793D9 /* Localizable.strings */,
 			);
 			path = "HomeControl WatchKit Extension";
 			sourceTree = "<group>";
@@ -328,8 +339,8 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
 			mainGroup = A22B4FB71BC906720062970C;
 			productRefGroup = A22B4FC11BC906730062970C /* Products */;
@@ -349,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A21A2C121BD6C3EA0097F24D /* Main.storyboard in Resources */,
+				A2BAE54E1C076854000793D9 /* Localizable.strings in Resources */,
 				A22B4FCE1BC906730062970C /* LaunchScreen.storyboard in Resources */,
 				A22B4FCB1BC906730062970C /* Assets.xcassets in Resources */,
 			);
@@ -368,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A22B4FEB1BC906730062970C /* Assets.xcassets in Resources */,
+				A2BAE5541C076CD6000793D9 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +445,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A21A2C111BD6C3EA0097F24D /* Base */,
+				A2BAE5491C0766D1000793D9 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -440,6 +454,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A22B4FCD1BC906730062970C /* Base */,
+				A2BAE54A1C0766D2000793D9 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -448,8 +463,27 @@
 			isa = PBXVariantGroup;
 			children = (
 				A22B4FD81BC906730062970C /* Base */,
+				A2BAE54B1C0766D2000793D9 /* en */,
 			);
 			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		A2BAE5501C076854000793D9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2BAE54F1C076854000793D9 /* Base */,
+				A2BAE5511C07685D000793D9 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		A2BAE5561C076CD6000793D9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2BAE5551C076CD6000793D9 /* Base */,
+				A2BAE5571C076CD7000793D9 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

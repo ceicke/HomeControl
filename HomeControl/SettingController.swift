@@ -18,12 +18,12 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
     
     @IBAction func addSetting(sender: AnyObject) {
         let alert = UIAlertController(
-            title: "Neuer Aktor",
+            title: NSLocalizedString("NEW_ACTOR", comment: "Neuer Aktor"),
             message: nil,
             preferredStyle: .Alert
         )
         
-        let saveAction = UIAlertAction(title: "Speichern",
+        let saveAction = UIAlertAction(title: NSLocalizedString("SAVE", comment: "Speichern"),
             style: .Default,
             handler: { (action:UIAlertAction) -> Void in
                 let textField = alert.textFields!.first
@@ -31,7 +31,7 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
                 self.tableView.reloadData()
         })
         
-        let cancelAction = UIAlertAction(title: "Abbrechen",
+        let cancelAction = UIAlertAction(title: NSLocalizedString("ABORT", comment: "Abbrechen"),
             style: .Default) { (action: UIAlertAction) -> Void in
         }
         
@@ -42,7 +42,7 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
         let textField = alert.textFields!.first
         textField!.autocapitalizationType = UITextAutocapitalizationType.Words
         textField!.autocorrectionType = UITextAutocorrectionType.Default
-        textField!.placeholder = "Name des Aktors"
+        textField!.placeholder = NSLocalizedString("NAME_OF_ACTOR", comment: "Name des Aktors")
         
         alert.addAction(cancelAction)
         alert.addAction(saveAction)
@@ -58,12 +58,12 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
         
         if self.tableView.editing {
             self.tableView.setEditing(false, animated: true)
-            editActorButton.title = "Bearbeiten"
+            editActorButton.title = NSLocalizedString("EDIT", comment: "Bearbeiten")
             
             saveOrdering()
         } else {
             self.tableView.setEditing(true, animated: false)
-            editActorButton.title = "Fertig"
+            editActorButton.title = NSLocalizedString("DONE", comment: "Fertig")
         }
     }
     

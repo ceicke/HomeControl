@@ -35,7 +35,7 @@ class LastResultController: WKInterfaceController, NSXMLParserDelegate {
         }
         
         if NSUserDefaults.standardUserDefaults().objectForKey("lastActor") == nil {
-            lastActor = "Noch nichts gesendet"
+            lastActor = NSLocalizedString("NOTHING_SENT_YET", comment: "Noch nichts gesendet")
         } else {
             lastActor = (NSUserDefaults.standardUserDefaults().valueForKey("lastActor") as? String)!
         }

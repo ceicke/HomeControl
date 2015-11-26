@@ -1,0 +1,22 @@
+/*
+  Localizable.strings
+  HomeControl
+
+  Created by Christoph Eicke on 26.11.15.
+  Copyright © 2015 Christoph Eicke. All rights reserved.
+*/
+ENTER_BASIC_DATA="Bitte Benutzername, Passwort und lokale IP des Miniservers eintragen";
+ALLES_KLAR="Alles klar";
+APPLE_WATCH_RECEIVED_DATA="Die AppleWatch hat die Daten empfangen.";
+ERROR="Fehler";
+ERROR_COMMUNICATING_WITH_WATCH="Fehler bei der Kommunikation mit der Apple Watch.";
+PLEASE_OPEN_LOXHOMECONTROL_ON_WATCH="Bitte LoxHomeControl auf der AppleWatch öffnen.";
+SAVE="Speichern";
+ABORT="Abbrechen";
+EDIT="Bearbeiten";
+DONE="Fertig";
+OK="OK";
+NEW_ACTOR="Neuer Aktor";
+NAME_OF_ACTOR="Name des Aktors";
+WRONG_UUID_FORMAT="Die eingegebene UUID hat das falsche Format.";
+ACTOR_COULD_NOT_BE_SAVED="Der Aktor konnte nicht gespeichert werden.";
