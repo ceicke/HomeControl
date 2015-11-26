@@ -107,10 +107,9 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
         cellForRowAtIndexPath
         indexPath: NSIndexPath) -> UITableViewCell {
             
-            let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-            
-            self.configureCell(cell, atIndexPath: indexPath)
-            
+            let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! ActorCell
+            let setting = settings[indexPath.row]
+            cell.configure(setting.valueForKey("name")!.description)
             return cell
     }
     
@@ -147,11 +146,6 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
             
             // insert it into the new position
             self.settings.insert(val, atIndex: destinationIndexPath.row)
-    }
-    
-    func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
-        let setting = settings[indexPath.row]
-        cell.textLabel!.text = setting.valueForKey("name")!.description
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

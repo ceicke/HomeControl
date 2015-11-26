@@ -9,4 +9,5 @@ import WatchKit
 
 class ActorRowController: NSObject {
     @IBOutlet weak var actorName: WKInterfaceLabel!
+    @IBOutlet weak var actorGroup: WKInterfaceGroup!
 }

@@ -10,6 +10,7 @@
 		A20735041BC97E1200CEF141 /* Loxone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20735031BC97E1200CEF141 /* Loxone.swift */; };
 		A21A2C0F1BD6BE350097F24D /* ActorDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A2C0E1BD6BE350097F24D /* ActorDetailController.swift */; };
 		A21A2C121BD6C3EA0097F24D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21A2C101BD6C3EA0097F24D /* Main.storyboard */; };
+		A22207501BFCDD9B0067B97D /* ActorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A222074F1BFCDD9B0067B97D /* ActorCell.swift */; };
 		A22B4FC41BC906730062970C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22B4FC31BC906730062970C /* AppDelegate.swift */; };
 		A22B4FC61BC906730062970C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22B4FC51BC906730062970C /* ViewController.swift */; };
 		A22B4FCB1BC906730062970C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A22B4FCA1BC906730062970C /* Assets.xcassets */; };
@@ -21,12 +22,23 @@
 		A22B4FE71BC906730062970C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22B4FE61BC906730062970C /* InterfaceController.swift */; };
 		A22B4FE91BC906730062970C /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22B4FE81BC906730062970C /* ExtensionDelegate.swift */; };
 		A22B4FEB1BC906730062970C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A22B4FEA1BC906730062970C /* Assets.xcassets */; };
+		A23AE05E1C0461740093B060 /* NFX.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AE0551C0461740093B060 /* NFX.swift */; };
+		A23AE05F1C0461740093B060 /* NFXBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AE0561C0461740093B060 /* NFXBodyDetailsController.swift */; };
+		A23AE0601C0461740093B060 /* NFXDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AE0571C0461740093B060 /* NFXDetailsController.swift */; };
+		A23AE0611C0461740093B060 /* NFXHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AE0581C0461740093B060 /* NFXHelper.swift */; };
+		A23AE0621C0461740093B060 /* NFXHTTPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AE0591C0461740093B060 /* NFXHTTPModel.swift */; };
+		A23AE0631C0461740093B060 /* NFXHTTPModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AE05A1C0461740093B060 /* NFXHTTPModelManager.swift */; };
+		A23AE0641C0461740093B060 /* NFXListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AE05B1C0461740093B060 /* NFXListCell.swift */; };
+		A23AE0651C0461740093B060 /* NFXListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AE05C1C0461740093B060 /* NFXListController.swift */; };
+		A23AE0661C0461740093B060 /* NFXProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23AE05D1C0461740093B060 /* NFXProtocol.swift */; };
 		A26A36121BD13E1A00DA7622 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A36111BD13E1A00DA7622 /* SettingController.swift */; };
 		A26A36151BD1401400DA7622 /* LoxoneConfiguration.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A26A36131BD1401400DA7622 /* LoxoneConfiguration.xcdatamodeld */; };
 		A2954D821BE1174200903087 /* Actor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2954D801BE1174200903087 /* Actor+CoreDataProperties.swift */; };
 		A2954D831BE1174200903087 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2954D811BE1174200903087 /* Actor.swift */; };
 		A2A408DE1BEA048800F568D0 /* ActorRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A408DD1BEA048800F568D0 /* ActorRowController.swift */; };
+		A2AEDC661C06071F006ED2FE /* Loxone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEDC651C06071F006ED2FE /* Loxone.swift */; };
 		A2DFD8291BE271B800D1DF88 /* ActorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DFD8281BE271B800D1DF88 /* ActorController.swift */; };
+		A2EB7A781BFB6DA4007DCA77 /* LastResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EB7A771BFB6DA4007DCA77 /* LastResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,9 +84,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A20735031BC97E1200CEF141 /* Loxone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loxone.swift; sourceTree = "<group>"; };
+		A20735031BC97E1200CEF141 /* Loxone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Loxone.swift; path = "HomeControl WatchKit Extension/Loxone.swift"; sourceTree = SOURCE_ROOT; };
 		A21A2C0E1BD6BE350097F24D /* ActorDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorDetailController.swift; sourceTree = "<group>"; };
 		A21A2C111BD6C3EA0097F24D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A222074F1BFCDD9B0067B97D /* ActorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorCell.swift; sourceTree = "<group>"; };
 		A22B4FC01BC906730062970C /* HomeControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A22B4FC31BC906730062970C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A22B4FC51BC906730062970C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,13 +103,24 @@
 		A22B4FE81BC906730062970C /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		A22B4FEA1BC906730062970C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A22B4FEC1BC906730062970C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A23AE0551C0461740093B060 /* NFX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFX.swift; sourceTree = "<group>"; };
+		A23AE0561C0461740093B060 /* NFXBodyDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXBodyDetailsController.swift; sourceTree = "<group>"; };
+		A23AE0571C0461740093B060 /* NFXDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXDetailsController.swift; sourceTree = "<group>"; };
+		A23AE0581C0461740093B060 /* NFXHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXHelper.swift; sourceTree = "<group>"; };
+		A23AE0591C0461740093B060 /* NFXHTTPModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXHTTPModel.swift; sourceTree = "<group>"; };
+		A23AE05A1C0461740093B060 /* NFXHTTPModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXHTTPModelManager.swift; sourceTree = "<group>"; };
+		A23AE05B1C0461740093B060 /* NFXListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXListCell.swift; sourceTree = "<group>"; };
+		A23AE05C1C0461740093B060 /* NFXListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXListController.swift; sourceTree = "<group>"; };
+		A23AE05D1C0461740093B060 /* NFXProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFXProtocol.swift; sourceTree = "<group>"; };
 		A26A36111BD13E1A00DA7622 /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		A26A36141BD1401400DA7622 /* LoxoneConfiguration.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoxoneConfiguration.xcdatamodel; sourceTree = "<group>"; };
 		A2954D801BE1174200903087 /* Actor+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Actor+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A2954D811BE1174200903087 /* Actor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
 		A2A408DD1BEA048800F568D0 /* ActorRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorRowController.swift; sourceTree = "<group>"; };
+		A2AEDC651C06071F006ED2FE /* Loxone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loxone.swift; sourceTree = "<group>"; };
 		A2AFB3141BE916560021E993 /* LoxoneConfigurationWithOrdering.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoxoneConfigurationWithOrdering.xcdatamodel; sourceTree = "<group>"; };
 		A2DFD8281BE271B800D1DF88 /* ActorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorController.swift; sourceTree = "<group>"; };
+		A2EB7A771BFB6DA4007DCA77 /* LastResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,9 +165,11 @@
 		A22B4FC21BC906730062970C /* HomeControl */ = {
 			isa = PBXGroup;
 			children = (
+				A23AE0541C0461740093B060 /* nfx */,
 				A2954D801BE1174200903087 /* Actor+CoreDataProperties.swift */,
 				A2954D811BE1174200903087 /* Actor.swift */,
 				A21A2C101BD6C3EA0097F24D /* Main.storyboard */,
+				A222074F1BFCDD9B0067B97D /* ActorCell.swift */,
 				A22B4FC31BC906730062970C /* AppDelegate.swift */,
 				A22B4FC51BC906730062970C /* ViewController.swift */,
 				A22B4FCA1BC906730062970C /* Assets.xcassets */,
@@ -151,6 +177,7 @@
 				A22B4FCF1BC906730062970C /* Info.plist */,
 				A26A36111BD13E1A00DA7622 /* SettingController.swift */,
 				A21A2C0E1BD6BE350097F24D /* ActorDetailController.swift */,
+				A2AEDC651C06071F006ED2FE /* Loxone.swift */,
 			);
 			path = HomeControl;
 			sourceTree = "<group>";
@@ -168,15 +195,32 @@
 		A22B4FE51BC906730062970C /* HomeControl WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				A2EB7A771BFB6DA4007DCA77 /* LastResultController.swift */,
 				A22B4FE61BC906730062970C /* InterfaceController.swift */,
 				A22B4FE81BC906730062970C /* ExtensionDelegate.swift */,
 				A22B4FEA1BC906730062970C /* Assets.xcassets */,
 				A22B4FEC1BC906730062970C /* Info.plist */,
-				A20735031BC97E1200CEF141 /* Loxone.swift */,
 				A2DFD8281BE271B800D1DF88 /* ActorController.swift */,
+				A20735031BC97E1200CEF141 /* Loxone.swift */,
 				A2A408DD1BEA048800F568D0 /* ActorRowController.swift */,
 			);
 			path = "HomeControl WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		A23AE0541C0461740093B060 /* nfx */ = {
+			isa = PBXGroup;
+			children = (
+				A23AE0551C0461740093B060 /* NFX.swift */,
+				A23AE0561C0461740093B060 /* NFXBodyDetailsController.swift */,
+				A23AE0571C0461740093B060 /* NFXDetailsController.swift */,
+				A23AE0581C0461740093B060 /* NFXHelper.swift */,
+				A23AE0591C0461740093B060 /* NFXHTTPModel.swift */,
+				A23AE05A1C0461740093B060 /* NFXHTTPModelManager.swift */,
+				A23AE05B1C0461740093B060 /* NFXListCell.swift */,
+				A23AE05C1C0461740093B060 /* NFXListController.swift */,
+				A23AE05D1C0461740093B060 /* NFXProtocol.swift */,
+			);
+			path = nfx;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,13 +378,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A23AE0641C0461740093B060 /* NFXListCell.swift in Sources */,
 				A26A36121BD13E1A00DA7622 /* SettingController.swift in Sources */,
 				A2954D821BE1174200903087 /* Actor+CoreDataProperties.swift in Sources */,
 				A21A2C0F1BD6BE350097F24D /* ActorDetailController.swift in Sources */,
+				A22207501BFCDD9B0067B97D /* ActorCell.swift in Sources */,
 				A2954D831BE1174200903087 /* Actor.swift in Sources */,
+				A23AE05E1C0461740093B060 /* NFX.swift in Sources */,
+				A23AE0611C0461740093B060 /* NFXHelper.swift in Sources */,
 				A22B4FC61BC906730062970C /* ViewController.swift in Sources */,
 				A26A36151BD1401400DA7622 /* LoxoneConfiguration.xcdatamodeld in Sources */,
+				A23AE0661C0461740093B060 /* NFXProtocol.swift in Sources */,
 				A22B4FC41BC906730062970C /* AppDelegate.swift in Sources */,
+				A2AEDC661C06071F006ED2FE /* Loxone.swift in Sources */,
+				A23AE0631C0461740093B060 /* NFXHTTPModelManager.swift in Sources */,
+				A23AE0601C0461740093B060 /* NFXDetailsController.swift in Sources */,
+				A23AE05F1C0461740093B060 /* NFXBodyDetailsController.swift in Sources */,
+				A23AE0651C0461740093B060 /* NFXListController.swift in Sources */,
+				A23AE0621C0461740093B060 /* NFXHTTPModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +405,7 @@
 			files = (
 				A20735041BC97E1200CEF141 /* Loxone.swift in Sources */,
 				A2A408DE1BEA048800F568D0 /* ActorRowController.swift in Sources */,
+				A2EB7A781BFB6DA4007DCA77 /* LastResultController.swift in Sources */,
 				A2DFD8291BE271B800D1DF88 /* ActorController.swift in Sources */,
 				A22B4FE91BC906730062970C /* ExtensionDelegate.swift in Sources */,
 				A22B4FE71BC906730062970C /* InterfaceController.swift in Sources */,
@@ -561,6 +617,7 @@
 				INFOPLIST_FILE = HomeControl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = org.geisterstunde.HomeControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -576,6 +633,7 @@
 				INFOPLIST_FILE = HomeControl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = org.geisterstunde.HomeControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

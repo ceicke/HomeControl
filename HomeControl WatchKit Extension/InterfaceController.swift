@@ -46,6 +46,14 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     @IBOutlet var actorTable: WKInterfaceTable!
     
+    @IBAction func infoPressed() {
+        presentControllerWithName("ServerInfo", context: ["seague": "hierachical", "data": "Passed through page-based navigator"])
+    }
+    
+    @IBAction func lastResultPressed() {
+        presentControllerWithName("LastResult", context: ["seague": "hierachical", "data": "Passed through page-based navigator"])
+    }
+    
     // receive and save basic connection settings
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
         let serverUrl = message["serverUrl"] as? String
@@ -88,9 +96,9 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         
         var actorArray = Array(actorDictionary.keys)
         var _ = actorArray.sortInPlace() {
-            var obj1 = actorDictionary[$0]
-            var obj2 = actorDictionary[$1]
-            return obj1!["order"] < obj2!["order"]
+            var actor1 = actorDictionary[$0]
+            var actor2 = actorDictionary[$1]
+            return actor1!["order"] < actor2!["order"]
         }
         
         return actorDictionary[actorArray[rowIndex]]
@@ -122,8 +130,14 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         actorTable.setNumberOfRows(actorArray.count, withRowType: "ActorRowController")
         
         for (index, actorName) in actorArray.enumerate() {
+            
             if let row = actorTable.rowControllerAtIndex(index) as? ActorRowController {
                 row.actorName.setText(actorName)
+                
+                let alphaValue = 1.2 - Double(abs(Double(index) - Double(actorArray.count - 1) / 2 ) / Double(actorArray.count / 2))
+                
+                let color : UIColor = UIColor.init(red: 0, green: 0.53, blue: 0.46, alpha: CGFloat(alphaValue))
+                row.actorGroup.setBackgroundColor(color)
             }
         }
     }

@@ -1,0 +1,21 @@
+
+/* Class = "WKInterfaceController"; title = "Hauptmenü"; ObjectID = "AgC-eL-Hgc"; */
+"AgC-eL-Hgc.title" = "Hauptmenü";
+
+/* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "CZ1-BC-P2K"; */
+"CZ1-BC-P2K.text" = "Label";
+
+/* Class = "WKInterfaceLabel"; text = "Bitte öffne auf dem iPhone die HomeControl App und schicke die Aktoren und Benutzername/Passwort/IP des Miniservers an deine AppleWatch."; ObjectID = "Ozu-tD-nNN"; */
+"Ozu-tD-nNN.text" = "Bitte öffne auf dem iPhone die HomeControl App und schicke die Aktoren und Benutzername/Passwort/IP des Miniservers an deine AppleWatch.";
+
+/* Class = "WKInterfaceLabel"; text = "Keine Konfiguration gefunden"; ObjectID = "RUa-Dr-aj1"; */
+"RUa-Dr-aj1.text" = "Keine Konfiguration gefunden";
+
+/* Class = "WKInterfaceController"; title = "OK"; ObjectID = "TQt-wK-Z7d"; */
+"TQt-wK-Z7d.title" = "OK";
+
+/* Class = "WKInterfaceButton"; title = "Aus"; ObjectID = "hgi-nX-kwR"; */
+"hgi-nX-kwR.title" = "Aus";
+
+/* Class = "WKInterfaceButton"; title = "An"; ObjectID = "uaj-Jp-ktK"; */
+"uaj-Jp-ktK.title" = "An";

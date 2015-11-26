@@ -2,12 +2,11 @@
 //  Loxone.swift
 //  HomeControl
 //
-//  Created by Christoph Eicke on 10.10.15.
+//  Created by Christoph Eicke on 25.11.15.
 //  Copyright © 2015 Christoph Eicke. All rights reserved.
 //
 
 import Foundation
-import WatchKit
 
 class Loxone {
     
@@ -33,17 +32,13 @@ class Loxone {
             }
         }
         
+        print(url)
+        
         if url != "" {
             let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
                 if let httpResponse = response as? NSHTTPURLResponse {
                     
-                    NSUserDefaults.standardUserDefaults().setObject(httpResponse.statusCode, forKey: "lastStatusCode")
-                    NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey: "lastStatusCodeDate")
-                    NSUserDefaults.standardUserDefaults().setObject(actor, forKey: "lastActor")
-                    NSUserDefaults.standardUserDefaults().synchronize()
-
                     if httpResponse.statusCode != 200 {
-                        WKInterfaceDevice().playHaptic(.Failure)
                         NSLog("ERROR \(httpResponse.statusCode)")
                     }
                 }
@@ -52,4 +47,5 @@ class Loxone {
             task.resume()
         }
     }
+
 }

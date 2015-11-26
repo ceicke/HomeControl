@@ -20,9 +20,9 @@ class ActorController: WKInterfaceController {
 
     @IBAction func actorOn() {
         if !dimmable {
-            loxone.tellLoxone(uuid, onOff: "on", scene: scene)
+            loxone.tellLoxone(name, uuid:uuid, onOff: "on", scene: scene)
         } else {
-            loxone.tellLoxone(uuid, onOff: "on", scene: scene, dimmValue: 100)
+            loxone.tellLoxone(name, uuid:uuid, onOff: "on", scene: scene, dimmValue: 100)
         }
         
         popController()
@@ -30,9 +30,9 @@ class ActorController: WKInterfaceController {
     
     @IBAction func actorOff() {
         if !dimmable {
-            loxone.tellLoxone(uuid, onOff: "off", scene: scene)
+            loxone.tellLoxone(name, uuid:uuid, onOff: "off", scene: scene)
         } else {
-            loxone.tellLoxone(uuid, onOff: "off", scene: scene, dimmValue: 0)
+            loxone.tellLoxone(name, uuid:uuid, onOff: "off", scene: scene, dimmValue: 0)
         }
         
         popController()
@@ -41,7 +41,7 @@ class ActorController: WKInterfaceController {
     @IBOutlet var dimmer: WKInterfaceSlider!
     
     @IBAction func dimmerTouched(value: Float) {
-        loxone.tellLoxone(uuid, onOff: "on", scene: scene, dimmValue: Int(value))
+        loxone.tellLoxone(name, uuid:uuid, onOff: "on", scene: scene, dimmValue: Int(value))
     }
     
     override func awakeWithContext(context: AnyObject?) {
