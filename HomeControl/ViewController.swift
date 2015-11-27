@@ -88,16 +88,11 @@ class ViewController: UIViewController, WCSessionDelegate {
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "order", ascending: true)]
 
             var actors  = [Actor]()
-            actors = (try! managedObjectContext!.executeFetchRequest(fetchRequest)) as! [Actor]
+            actors = (try! managedObjectContext.executeFetchRequest(fetchRequest)) as! [Actor]
             if actors.count > 0 {
                 for actor in actors {
                     if (actor.uuid != nil) {
-                        let uuid = actor.uuid as String!
-                        let scene = actor.scene as String!
-                        let dimmable = actor.dimmable
-                        let order = actor.order
-                            
-                        actorData[actor.name!] = "\(uuid);\(scene);\(dimmable!);\(order!)"
+                        actorData[actor.name!] = actor.asTransmittableString()
                     }
                 }
             } else {

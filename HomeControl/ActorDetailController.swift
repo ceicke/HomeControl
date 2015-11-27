@@ -32,7 +32,7 @@ class ActorDetailController: UIViewController {
         
         testDimmer.hidden = !actorDimmable.on
         
-        if (!isUUIDFormatvalid((actor?.uuid)!)) {
+        if (!actor!.isUUIDFormatvalid()) {
             presentError(NSLocalizedString("ERROR", comment: "Fehler"), message: NSLocalizedString("WRONG_UUID_FORMAT", comment: "Die eingegebene UUID hat das falsche Format."))
             return
         }
@@ -73,19 +73,6 @@ class ActorDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
-    }
-    
-    func isUUIDFormatvalid(uuid: String)-> Bool {
-        
-        if actorUUID.text!.isEmpty {
-            return false
-        } else {
-            let regex = try! NSRegularExpression(pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{16}$", options: [.CaseInsensitive])
-            let textString = uuid as NSString
-            let matches = regex.matchesInString(uuid, options: [], range: NSMakeRange(0, textString.length))
-        
-            return matches.count > 0
-        }
     }
     
     func serverDataEntered(uuid: String)-> Bool {

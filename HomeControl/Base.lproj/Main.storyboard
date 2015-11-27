@@ -136,7 +136,7 @@
                                     <action selector="addSetting:" destination="q49-Nb-HyH" id="WEl-0F-tTO"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Bearbeiten" style="plain" id="tXh-4U-J2p">
+                            <barButtonItem title="Bearbeiten" id="tXh-4U-J2p">
                                 <connections>
                                     <action selector="editActorList:" destination="q49-Nb-HyH" id="9lj-9V-eUf"/>
                                 </connections>
