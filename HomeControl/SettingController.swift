@@ -69,7 +69,7 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
     
     override func viewDidLoad() {
         managedContext = appDelegate.managedObjectContext
-        super.viewDidLoad()
+//        super.viewDidLoad()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

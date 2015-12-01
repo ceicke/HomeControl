@@ -5,10 +5,10 @@
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Basic Settings-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HomeControl" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Basic Settings" id="BYZ-38-t0r" customClass="ViewController" customModule="HomeControl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -51,48 +51,26 @@
                                     <action selector="saveValues:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qEC-G9-o0z"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Svq-WW-vHE">
-                                <rect key="frame" x="80" y="265" width="160" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <state key="normal" title="An AppleWatch senden"/>
-                                <connections>
-                                    <action selector="sendConfiguration:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bwB-gR-n4F"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nGe-pT-Lwg">
-                        <barButtonItem key="rightBarButtonItem" id="ntB-gB-ce3">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ncL-M2-Nx6">
-                                <rect key="frame" x="250" y="7" width="54" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <state key="normal" title="Aktoren"/>
-                                <connections>
-                                    <segue destination="q49-Nb-HyH" kind="push" identifier="" id="vfd-3e-ZIS"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" title="Einstellungen" image="Settings" id="0Ez-po-pHn" userLabel="Basic Settings"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="loxonePassword" destination="cLR-6w-cai" id="cUQ-5b-GZn"/>
                         <outlet property="loxoneServerUrl" destination="9oD-fc-Kw0" id="YLf-SM-fyT"/>
                         <outlet property="loxoneUsername" destination="6I2-Cz-lhj" id="naX-PE-95l"/>
-                        <outlet property="sendToWatchButton" destination="Svq-WW-vHE" id="qhs-jM-bgk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="708" y="395"/>
+            <point key="canvasLocation" x="1182" y="1140"/>
         </scene>
-        <!--Setting Controller-->
+        <!--Actor List-->
         <scene sceneID="upK-HW-65C">
             <objects>
-                <tableViewController id="q49-Nb-HyH" customClass="SettingController" customModule="HomeControl" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Actor List" id="q49-Nb-HyH" customClass="SettingController" customModule="HomeControl" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vn7-ph-Tn9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,6 +107,8 @@
                             <outlet property="dataSource" destination="q49-Nb-HyH" id="dsm-oV-wGe"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Aktoren" image="Actor-list" id="Uyk-bs-qyF" userLabel="Actor List"/>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="OV2-de-5w6">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="4Nm-Br-naC">
@@ -143,6 +123,8 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="editActorButton" destination="tXh-4U-J2p" id="nN2-6h-ZTm"/>
                     </connections>
@@ -150,6 +132,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgd-aF-cVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1182" y="395"/>
+        </scene>
+        <!--Main Tab Controller-->
+        <scene sceneID="Wgw-oz-qGe">
+            <objects>
+                <tabBarController id="g5q-uF-ZYN" customClass="MainTabController" customModule="HomeControl" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ddW-Lb-oL1"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="scd-zj-yBR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="n4p-dp-p9H"/>
+                        <segue destination="q49-Nb-HyH" kind="relationship" relationship="viewControllers" id="se2-e5-zDJ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EoR-k3-Y4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="670" y="395"/>
         </scene>
         <!--Actor Detail Controller-->
         <scene sceneID="a2f-e6-Ymw">
@@ -194,14 +196,6 @@
                                     <action selector="dimmableChanged:" destination="fj9-H6-aTo" eventType="valueChanged" id="y6e-yf-GeF"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dimmbar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NcC-R4-KAN">
-                                <rect key="frame" x="97" y="227" width="70" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="krA-15-FF1">
                                 <rect key="frame" x="125" y="269" width="70" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -213,7 +207,7 @@
                             </button>
                             <view opaque="NO" contentMode="scaleToFill" id="CPx-6D-pwv">
                                 <rect key="frame" x="0.0" y="307" width="320" height="93"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yb9-Fe-ZBz">
                                         <rect key="frame" x="32" y="43" width="54" height="30"/>
@@ -259,6 +253,14 @@
                                 <color key="backgroundColor" red="0.0039215686269999999" green="0.52549019610000003" blue="0.45882352939999999" alpha="0.10150862068965517" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dimmbar" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NcC-R4-KAN">
+                                <rect key="frame" x="20" y="227" width="147" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -289,7 +291,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vsr-nn-AGe"/>
+                        <segue destination="g5q-uF-ZYN" kind="relationship" relationship="rootViewController" id="BMc-0t-f13"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jic-rc-206" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -297,4 +299,8 @@
             <point key="canvasLocation" x="176" y="395"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Actor-list" width="25" height="23"/>
+        <image name="Settings" width="25" height="25"/>
+    </resources>
 </document>
