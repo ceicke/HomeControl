@@ -33,18 +33,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func saveValues(sender: UIButton) {
-        if loxoneServerUrl.text!.isEmpty || loxoneUsername.text!.isEmpty || loxonePassword.text!.isEmpty {
-            let alertController = UIAlertController(title: NSLocalizedString("ERROR", comment: "Fehler"), message: NSLocalizedString("ENTER_BASIC_DATA", comment: "Bitte Benutzername, Passwort und lokale IP des Miniservers eintragen"), preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
-            self.presentViewController(alertController, animated: true, completion: nil)
-        } else {
+        if !loxoneServerUrl.text!.isEmpty && !loxoneUsername.text!.isEmpty && !loxonePassword.text!.isEmpty {
             NSUserDefaults.standardUserDefaults().setObject(loxoneServerUrl.text!, forKey: "serverUrl")
             NSUserDefaults.standardUserDefaults().setObject(loxoneUsername.text!, forKey: "username")
             NSUserDefaults.standardUserDefaults().setObject(loxonePassword.text!, forKey: "password")
             
             NSUserDefaults.standardUserDefaults().synchronize()
         }
-        MainTabController().enableDisableSendButton()
     }
 }
 
