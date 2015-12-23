@@ -49,3 +49,8 @@
 
 /* Class = "UIButton"; normalTitle = "Aus"; ObjectID = "yb9-Fe-ZBz"; */
 "yb9-Fe-ZBz.normalTitle" = "Off";
+
+/* UIButtonBar Buttons */
+"0Ez-po-pHn.title" = "Settings";
+"GCL-2R-Czi.title" = "Actors";
+
