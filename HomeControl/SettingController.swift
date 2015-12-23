@@ -14,7 +14,7 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
     var settings = [NSManagedObject]()
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    var managedContext = NSManagedObjectContext()
+    var managedContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
     
     @IBAction func addSetting(sender: AnyObject) {
         let alert = UIAlertController(
@@ -68,8 +68,8 @@ class SettingController: UITableViewController, NSFetchedResultsControllerDelega
     }
     
     override func viewDidLoad() {
-        managedContext = appDelegate.managedObjectContext!
-        super.viewDidLoad()
+        managedContext = appDelegate.managedObjectContext
+//        super.viewDidLoad()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

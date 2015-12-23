@@ -20,3 +20,4 @@ NEW_ACTOR="Neuer Aktor";
 NAME_OF_ACTOR="Name des Aktors";
 WRONG_UUID_FORMAT="Die eingegebene UUID hat das falsche Format.";
 ACTOR_COULD_NOT_BE_SAVED="Der Aktor konnte nicht gespeichert werden.";
+SEND_TO_WATCH="An die AppleWatch senden.";

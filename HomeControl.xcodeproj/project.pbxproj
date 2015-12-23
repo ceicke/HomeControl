@@ -39,6 +39,7 @@
 		A2AEDC661C06071F006ED2FE /* Loxone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEDC651C06071F006ED2FE /* Loxone.swift */; };
 		A2BAE54E1C076854000793D9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2BAE5501C076854000793D9 /* Localizable.strings */; };
 		A2BAE5541C076CD6000793D9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2BAE5561C076CD6000793D9 /* Localizable.strings */; };
+		A2CC35931C0885D300F40C05 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CC35921C0885D300F40C05 /* MainTabController.swift */; };
 		A2DFD8291BE271B800D1DF88 /* ActorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DFD8281BE271B800D1DF88 /* ActorController.swift */; };
 		A2EB7A781BFB6DA4007DCA77 /* LastResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EB7A771BFB6DA4007DCA77 /* LastResultController.swift */; };
 /* End PBXBuildFile section */
@@ -128,6 +129,7 @@
 		A2BAE5511C07685D000793D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A2BAE5551C076CD6000793D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A2BAE5571C076CD7000793D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2CC35921C0885D300F40C05 /* MainTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		A2DFD8281BE271B800D1DF88 /* ActorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorController.swift; sourceTree = "<group>"; };
 		A2EB7A771BFB6DA4007DCA77 /* LastResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -188,6 +190,7 @@
 				A21A2C0E1BD6BE350097F24D /* ActorDetailController.swift */,
 				A2AEDC651C06071F006ED2FE /* Loxone.swift */,
 				A2BAE5501C076854000793D9 /* Localizable.strings */,
+				A2CC35921C0885D300F40C05 /* MainTabController.swift */,
 			);
 			path = HomeControl;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 		A22B4FB81BC906720062970C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Christoph Eicke";
 				TargetAttributes = {
@@ -394,6 +398,7 @@
 				A23AE0641C0461740093B060 /* NFXListCell.swift in Sources */,
 				A26A36121BD13E1A00DA7622 /* SettingController.swift in Sources */,
 				A2954D821BE1174200903087 /* Actor+CoreDataProperties.swift in Sources */,
+				A2CC35931C0885D300F40C05 /* MainTabController.swift in Sources */,
 				A21A2C0F1BD6BE350097F24D /* ActorDetailController.swift in Sources */,
 				A22207501BFCDD9B0067B97D /* ActorCell.swift in Sources */,
 				A2954D831BE1174200903087 /* Actor.swift in Sources */,
