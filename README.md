@@ -1,8 +1,8 @@
-# AppleWatch to control Loxone
+# Apple Watch to control Loxone
 
 ![AppleWatch running HomeControl](http://loxhomecontrol.geisterstunde.org/watch.png)
 
-This is a simple AppleWatch App for controlling the lighting of your [Loxone](http://www.loxone.com) smarhome miniserver. Have a look at http://loxhomecontrol.geisterstunde.org for more screenshots and documentation (in German).
+This is a simple Apple Watch App for controlling the lighting of your [Loxone](http://www.loxone.com) smarhome miniserver. Have a look at http://loxhomecontrol.geisterstunde.org for more screenshots and documentation (in German).
 
 [![Get in AppStore](http://loxhomecontrol.geisterstunde.org/download_appstore.svg)](https://t.co/t6chPUt1YQ)
 
